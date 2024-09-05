@@ -1,8 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+// console.log(process.env.REACT_APP_API_KEY, '<-- API KEY');
 
 function App() {
+
+  fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=1995-06-16`)
+    .then(response => response.json())
+    .then(data => console.log(data, '<-- HERE'))
+    .catch(err => console.log(err))
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+
