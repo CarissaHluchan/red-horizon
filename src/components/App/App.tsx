@@ -1,6 +1,11 @@
 import React from 'react'; // do we need this?
 import './App.css';
 import ApiCalls from './ApiCalls/ApiCalls'
+import AllImages from '../AllImages/AllImages';
+import FavoriteImages from '../FavoriteImages/FavoriteImages';
+import SingleImageDetails from '../SingleImageDetails/SingleImageDetails';
+
+
 // console.log(process.env.REACT_APP_API_KEY, '<-- API KEY');
 
 async function App() {
