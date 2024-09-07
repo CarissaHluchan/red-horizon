@@ -6,17 +6,25 @@ import Favorites from '../Favorites/Favorites';
 import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
 
-import { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [reoverData, setRoverData] = useState([])
 
   useEffect(() => {
-    let data = rovers()
-    setRoverData(data)
-    console.log(data, '<-- HERE FOR ROVERS')
-  }, [])
+    const fetchData = async () => {
+      try {
+        const data = await rovers();
+        setRoverData(data);
+        console.log(data, '<-- HERE FOR ROVERS');
+      } catch (error) {
+        console.error('Error fetching rover data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
 
   return (

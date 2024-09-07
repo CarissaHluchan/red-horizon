@@ -8,12 +8,28 @@
 const apiKey = import.meta.env.VITE_API_KEY
 
 export const rovers = async () => {
-    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${apiKey}&sol=1000`)
-    let nasaDataFetched = await fetchNasaData.json()
-    let nasaData = nasaDataFetched
+    try {
+        const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${apiKey}&sol=1000`)
+        if (!response.ok) {
+            throw new Error('There was a error displaying rovers media.')
+        }
+        const nasaData = await response.json()
+        console.log(nasaData.photos)
+        return nasaData.photos
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
     // console.log(nasaData)
-    return nasaData.photos
 }
+
+// export const rovers = async () => {
+//     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${apiKey}&sol=1000`)
+//     let nasaDataFetched = await fetchNasaData.json()
+//     let nasaData = nasaDataFetched
+//     // console.log(nasaData)
+//     return nasaData.photos
+// }
 
 export const AllMars = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
