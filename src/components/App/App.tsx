@@ -12,14 +12,14 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [reoverData, setRoverData] = useState([])
+  const [roverData, setRoverData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await rovers();
-        setRoverData(data.photos);
-        console.log(data, '<-- HERE FOR ROVERS');
+        setRoverData(data);
+        console.log(data, '<-- API response');
       } catch (error) {
         console.error('Error fetching rover data:', error);
       }

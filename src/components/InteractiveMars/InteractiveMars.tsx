@@ -1,4 +1,4 @@
-import './InteractiveMars.css';
+// import './InteractiveMars.css';
 
 import clickableMarsImage from '../../assets/MARS-Viking.jpg';
 import clickablePhobosMoon from '../../assets/Phobos.jpg';

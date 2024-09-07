@@ -1,7 +1,7 @@
-import './ClickMars.css';
+import './LandingPage.css';
 import InteractiveMars from '../InteractiveMars/InteractiveMars';
 
-function ClickMars() {
+function LandingPage() {
 
     return (
         <div>
@@ -15,4 +15,4 @@ function ClickMars() {
     )
 }
 
-export default ClickMars;
+export default LandingPage;
