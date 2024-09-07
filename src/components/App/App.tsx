@@ -1,6 +1,7 @@
 
 import './App.css'
 import { rovers } from '../APICalls/APICalls';
+import ClickMars from '../ClickMars/ClickMars';
 import AllMedia from '../AllMedia/AllMedia';
 import DynamicMedia from '../DynamicMeida/DynamicMeida';
 import Favorites from '../Favorites/Favorites';
@@ -30,12 +31,12 @@ function App() {
 
   return (
     <>
-      <div>Hello World!</div>
+      <ClickMars />
       <Routes>
         <Route path='/mars' element={<AllMedia />} />
         <Route path='/mars/:media' element={<DynamicMedia />} />
         <Route path='/mars/:id' element={<SingleMediaDetails />} />
-        <Route path='/favorites' element={<Favorites />} /> 
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error={404} />} />
       </Routes>
