@@ -1,9 +1,117 @@
-export function testFeach() {
-    return fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=1995-06-16`)
-        .then(response => response.json())
-        .then(data => console.log(data, '<-- HERE'))
-        .catch(err => console.log(err))
+// export function testFeach() {
+//     return fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=1995-06-16`)
+//         .then(response => response.json())
+//         .then(data => console.log(data, '<-- HERE'))
+//         .catch(err => console.log(err))
+// }
+
+export const AllMars = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${apiKey}&sol=1000`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
 }
+
+export const rovers = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const phobos = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const deimos = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const polarIceCaps = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const olympusMons = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const ascraeusMons = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const pavonisMons = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const arisaMons = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const vallesMarineris = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const argyrePlanitia = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const candorChasma = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+export const aresVallis = async () => {
+    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+    let nasaDataFetched = await fetchNasaData.json()
+    let nasaData = nasaDataFetched
+    // console.log(nasaData)
+    return nasaData
+}
+
+
+// GET /search?q={q}
+// GET /asset/{nasa_id}
 
 /**
 const apiKey = import.meta.env.VITE_API_KEY
