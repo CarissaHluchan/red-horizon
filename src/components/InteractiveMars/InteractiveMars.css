@@ -1,0 +1,92 @@
+.interactive-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*------------------// Mars //------------------------*/
+
+.mars-title-rover {
+    width: 100vw;
+    position: relative;
+}
+
+.clickable-mars-title {
+    font-family: var(--clickable-font);
+    font-size: 6vw;
+    margin: 0;
+    position: absolute;
+    right: 9%;
+    top: 2%;
+}
+
+.clickable-mars-image {
+    width: 75vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 12vh auto 20vw 0;
+    margin: 12vh auto 0 ;
+    display: block;
+    object-position: center;
+}
+
+.clickalbe-rover {
+    width: 15vw;
+    position: absolute;
+    top: 34%;
+    left: 37%;
+}
+
+/*-------------------// Moons //-----------------------*/
+
+.moons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative;
+    top: -8vh; */
+    /* border: 2px solid cyan; */
+}
+
+.moons-and-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moon-titles {
+    font-family: var(--clickable-font);
+    font-size: 4vw;
+}
+
+.clickable-phobos-moon {
+    width: 27vh;
+    height: auto;
+    margin-left: 2vw;
+}
+
+.clickable-deimos-moon {
+    width: 27vh;
+    height: auto;
+}
+
+/*---------------------// Hover //--------------------*/
+
+.hover-text {
+    visibility: hidden; /* Initially hide the extra text */
+    opacity: 0; /* Start with the text being fully transparent */
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; /* Ensure the text is positioned relative to .clickable-mars-title */
+    right: 9%; /* Adjust this value as needed */
+    top: 90%; /* Adjust this value as needed */
+    font-family: var(--clickable-font); /* Apply the font settings */
+    font-size: 2vw; /* Ensure the text has the same size as the title */
+    margin: 0;
+}
+
+.clickable-mars-title:hover .hover-text {
+    visibility: visible; /* Show the extra text on hover */
+    opacity: 1; /* Fade in the text */
+}

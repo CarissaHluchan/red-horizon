@@ -14,7 +14,7 @@ const errorCode = error || code
         <section>
             <h2>{`We are so sorry, there been a ${errorCode} error! Please try again later.`}</h2>
         </section>
-    );
+    )
 }
 
 export default ErrorPage;

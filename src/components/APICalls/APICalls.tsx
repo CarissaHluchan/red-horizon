@@ -58,6 +58,24 @@ export const OallMars = async () => {
     return nasaData
 }
 
+
+// export const phobos = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
+
+// };
 export const phobos = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -191,3 +209,47 @@ function ApiCalls() {
 
 export default ApiCalls;
 */
+
+/**
+ export const oAllMars = async () => {
+  try {
+    const response = await fetch(`https://images-api.nasa.gov/search?q=mars`)
+    if (!response.ok) {
+      throw new Error('There was a error displaying rovers media.')
+    }
+    const nasaData = await response.json()
+    // console.log(nasaData.collection.items, '<-- FROM API CALL IN OALLMARS')
+    let nasaData2 = nasaData.collection.items
+    let parsedNasaData = nasaData2.filter((asset: {}) => {
+      //  console.log(asset.data[0].nasa_id, '<-- should be nasa IDs')
+        return asset.data[0].nasa_id.includes('PIA')
+    })
+    let parsedImageCollection = parsedNasaData
+
+    await parsedImageCollection.map((item: {}) => {
+      // console.log(item.data[0].nasa_id)
+      let nasaId = item.data[0].nasa_id
+      fetch(`http://images-api.nasa.gov/asset/${nasaId}`)
+      .then(res => res.json())
+      .then((data) => {
+        // console.log(data.collection.items[0].href)
+        piaPictures.push(data.collection.items[0].href)
+      })
+      // let nasaIdPic = fetchNasaPic
+      // console.log(nasaIdPic, '<-- SHOULD BE PICS')
+    })
+    let piaPictures: String[] = []
+    console.log(piaPictures, '<-- FOR IMAGES')
+
+
+
+    // return parsedImageCollection
+  } catch (error) {
+    console.log('Error fetching data:', error)
+    throw error;
+  }
+  // try {
+  //   const response2 = await fetch(``)
+  // }
+};
+ */
