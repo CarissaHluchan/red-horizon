@@ -5,7 +5,7 @@ function AllMedia() {
 
   return (
     <Link to="" >
-      <h1><
+      <h1>This will be something from AllMedia...</h1>
     </Link> 
   )
 }

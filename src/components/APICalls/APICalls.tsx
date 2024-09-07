@@ -5,15 +5,17 @@
 //         .catch(err => console.log(err))
 // }
 
-export const AllMars = async () => {
+const apiKey = import.meta.env.VITE_API_KEY
+
+export const rovers = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${apiKey}&sol=1000`)
     let nasaDataFetched = await fetchNasaData.json()
     let nasaData = nasaDataFetched
     // console.log(nasaData)
-    return nasaData
+    return nasaData.photos
 }
 
-export const rovers = async () => {
+export const AllMars = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
     let nasaData = nasaDataFetched
