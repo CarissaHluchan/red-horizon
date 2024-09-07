@@ -32,17 +32,23 @@ export const rovers = async () => {
 // }
 
 
-export const AllMars = async () => {
-    try {
-        const response = await fetch(``)
-        if(!response.ok) {
-            throw new Error('There was a error displaying rovers media.')
-        }
-        const nasaData = await response.json
+// export const AllMars = async () => {
+//     try {
+//         const response = await fetch(`https://images-api.nasa.gov/search?q=mars`)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
-    }
-
-};
+// };
 
 export const OallMars = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)

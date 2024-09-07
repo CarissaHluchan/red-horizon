@@ -1,3 +1,22 @@
-title {
+.title {
     display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-family: var(--title-font);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10vw;
+    margin: 3px;
+}
+
+.title-question {
+    font-size: 3vw;
+}
+
+.title-directions {
+    color: var(--secondary-color);
 }

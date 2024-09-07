@@ -5,15 +5,19 @@
   --secondary-color: #18D79F;
   --tertiary-color: #C1D8C3;
   --favorite-bg: #504f59;
+  
+  --primary-font: "Open Sans", sans-serif;
+  --title-font: "Protest Guerrilla", sans-serif;
+  --clickable-font: "Orbitron", sans-serif;;
+}
 
-  .open-sans {
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
+/* .open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .orbitron {
@@ -27,8 +31,15 @@
   font-family: "Protest Guerrilla", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 body {
   background-color: var(--black);
+  color: var(--white);
+  font-family: var(--primary-font);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }

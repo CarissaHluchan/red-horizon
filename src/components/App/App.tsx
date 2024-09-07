@@ -14,19 +14,23 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   const [roverData, setRoverData] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await rovers();
-        setRoverData(data);
-        console.log(data, '<-- API response');
-      } catch (error) {
-        console.error('Error fetching rover data:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const data = await rovers();
+  //       setRoverData(data);
+  //       console.log(data, '<-- API response');
+  //     } catch (error) {
+  //       console.error('Error fetching rover data:', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
+
+  useEffect(() => {
+    rovers()
+  }, [])
 
 
   return (
