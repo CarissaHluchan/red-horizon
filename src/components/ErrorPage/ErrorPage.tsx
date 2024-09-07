@@ -1,13 +1,20 @@
 import './ErrorPage.css';
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
-function ErrorPage() {
+interface ErrorPageProps {
+  error?: string | number;
+}
 
-  return (
-    <Link to="">
-      <h1>This will be something from error handling...</h1>
-    </Link>
-  )
+function ErrorPage({error}: ErrorPageProps) {
+const { code } = useParams();
+
+const errorCode = error || code
+
+    return (
+        <section>
+            <h2>{`We are so sorry, there been a ${errorCode} error! Please try again later.`}</h2>
+        </section>
+    );
 }
 
 export default ErrorPage;

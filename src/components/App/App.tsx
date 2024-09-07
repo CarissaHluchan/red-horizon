@@ -36,7 +36,7 @@ function App() {
         <Route path='/mars/:media' element={<DynamicMedia />} />
         <Route path='/mars/:id' element={<SingleMediaDetails />} />
         <Route path='/favorites' element={<Favorites />} /> 
-        <Route path='/error/:code' element={<ErrorPage />} />
+        <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error={404} />} />
       </Routes>
     </>
