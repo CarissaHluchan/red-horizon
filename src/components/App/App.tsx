@@ -1,7 +1,7 @@
 
 import './App.css'
 import { rovers } from '../APICalls/APICalls';
-import ClickMars from '../ClickMars/ClickMars';
+import LandingPage from '../LandingPage/LandingPage';
 import AllMedia from '../AllMedia/AllMedia';
 import DynamicMedia from '../DynamicMeida/DynamicMeida';
 import Favorites from '../Favorites/Favorites';
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <ClickMars />
+      <LandingPage />
       <Routes>
         <Route path='/mars' element={<AllMedia />} />
         <Route path='/mars/:media' element={<DynamicMedia />} />
