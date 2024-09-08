@@ -16,6 +16,7 @@ function InteractiveMars() {
                 </h2>
                 <img src={MainMarsImage} alt='Mars' className='main-mars-image' />
                 <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
+                <div className='square'></div>
             </div>
             <div className='moons'>
                 <div className='moons-and-titles'>

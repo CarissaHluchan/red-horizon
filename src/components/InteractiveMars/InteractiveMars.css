@@ -9,6 +9,8 @@
 .mars-parent-container {
     width: 100vw;
     position: relative;
+    /* position: absolute; */
+    /* border: 2px solid red; */
 }
 
 .clickable-mars-title {
@@ -53,8 +55,8 @@
 .clickalbe-rover {
     width: 15vw;
     position: absolute;
-    top: 34%;
-    left: 37%;
+    top: 29%;
+    left: 32%;
 }
 
 
@@ -99,8 +101,31 @@
 
 /*---------------------// Hover //--------------------*/
 
-/* .square {
+.square {
+    position: relative;
     width: 100px;
     height: 100px;
     background-color: red;
-} */
+    overflow: hidden; /* Ensure border stays within the element */
+}
+
+/* Create the border effect using pseudo-element */
+.square::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* width: 100%;
+    height: 100%; */
+    border: 2px solid white; /* Border color and thickness */
+    transform: scale(0); /* Initially scale down to 0 */
+    transform-origin: center; /* Scale from the center */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover state for growing the border */
+.square:hover::before {
+    transform: scale(1); /* Scale up to full size */
+}
