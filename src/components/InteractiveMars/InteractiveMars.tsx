@@ -19,11 +19,13 @@ function InteractiveMars() {
                     </h2>
                 </Link>
                 <img src={MainMarsImage} alt='Mars' className='main-mars-image' />
-                <div className='rover-wrapper'>
-                    <span className='hover-text-rovers'>Rovers</span>
-                    <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
-                    <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
-                </div>
+                <Link to='/mars/rovers'>
+                    <div className='rover-wrapper'>
+                        <span className='hover-text-rovers'>Rovers</span>
+                        <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
+                        <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
+                    </div>
+                </Link>
                 {/* <div className='square'></div> */}
             </div>
             <div className='moons'>

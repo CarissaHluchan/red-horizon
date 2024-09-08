@@ -82,6 +82,24 @@
     transform: scale(1);
 }
 
+.hover-text-rovers {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 9%; 
+    top: 90%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.rover-wrapper:hover .hover-text-rovers {
+    visibility: visible; /* Show the extra text on hover */
+    opacity: 1; /* Fade in the text */
+}
+
 /*-------------------// Moons //-----------------------*/
 
 .moons {

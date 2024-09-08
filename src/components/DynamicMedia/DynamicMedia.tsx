@@ -17,7 +17,7 @@ interface DynamicMediaProps {
   function DynamicMedia({ data, title }: DynamicMediaProps) {
     return (
       <div className="media-gallery">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         {data.map(photo => (
           <div key={photo.id} className="media-item">
             <Link to={`/media/${photo.id}`}>

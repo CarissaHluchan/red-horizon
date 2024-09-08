@@ -1,4 +1,4 @@
-.media-gallery {
+/* .media-gallery {
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
@@ -25,9 +25,9 @@
 .radio-button {
     width: 2vw;
     accent-color: var(--primary-color);
-}
+} */
 
-/** 
+
 
 .media-gallery {
   display: grid;
@@ -70,5 +70,4 @@
     width: 3vw;
     accent-color: inherit;
 }
-    
-*/
+
