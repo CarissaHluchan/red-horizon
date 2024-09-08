@@ -32,34 +32,159 @@ export const rovers = async () => {
 // }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// export const AllMars = async () => {
-//     try {
-//         const response = await fetch(`https://images-api.nasa.gov/search?q=mars`)
-//         if(!response.ok) {
-//             throw new Error('There was a error displaying rovers media.')
-//         }
-//         const nasaData = await response.json()
-//         
-//         console.log(nasaData.photos)
-//         return nasaData.photos
-//     } catch (error) {
-//         console.log('Error fetching data:', error)
-//         throw error;
-// 
-// }
-
-// };
-
-export const OallMars = async () => {
-    let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
-    let nasaDataFetched = await fetchNasaData.json()
-    let nasaData = nasaDataFetched
-    // console.log(nasaData)
-    return nasaData
+interface Link {
+  href: string;
+  rel: string;
+  render: string;
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+interface PhotoData {
+  description: string;
+  title: string;
+  photographer: string;
+  location: string;
+  nasa_id: string;
+  date_created: string;
+  keywords: string[];
+  media_type: string;
+  center: string;
+}
 
+interface PhotoItem {
+  href: string;
+  data: PhotoData[];
+  links: Link[];
+}
+
+interface AllMarsResponse {
+  collection: {
+    version: string;
+    href: string;
+    items: PhotoItem[];
+    data: Array;
+  };
+}
+
+interface Photo {
+  id: string;
+  img_src: string;
+  description: string;
+  title: string;
+  date_created: string;
+}
+
+// Define the async function with correct typing
+export const AllMars = async (): Promise<Photo[]> => {
+  try {
+    const response = await fetch('https://images-api.nasa.gov/search?q=mars&media_type=image&year_start=1920&year_end=2024&page_size=1000');
+    if (!response.ok) {
+      throw new Error('There was an error displaying Mars media.');
+    }
+    const data: AllMarsResponse = await response.json();
+
+// Filter and map the API data to the desired format
+const photos: Photo[] = data.collection.items
+.filter(item => item.data.length > 0 && item.data[0].nasa_id.includes('PIA'))
+.map(item => ({
+  id: item.data[0].nasa_id,
+  img_src: item.links[0].href,
+  description: item.data[0].description,
+  title: item.data[0].title,
+  date_created: item.data[0].date_created
+}));
+
+    console.log(photos);
+    return photos;
+  } catch (error) {
+    console.log('Error fetching data:', error);
+    throw error;
+  }
+};
+
+
+// export const AllMars = async () => {
+//   try {
+//     const response = await fetch(`https://images-api.nasa.gov/search?q=mars&media_type=image&year_start=1920&year_end=2024&page_size=1000`)
+//     if (!response.ok) {
+//       throw new Error('There was a error displaying rovers media.')
+//     }
+//     const nasaData = await response.json()
+
+//     let nasaData2 = nasaData.collection.items
+//     let parsedNasaData = nasaData2.filter((asset: {}) => {
+//       //  console.log(asset.data[0].nasa_id, '<-- should be nasa IDs')
+//       return asset.data[0].nasa_id.includes('PIA')
+//     })
+//     let parsedImageCollection = parsedNasaData
+
+//     console.log(parsedImageCollection)
+//     return parsedImageCollection
+//   } catch (error) {
+//     console.log('Error fetching data:', error)
+//     throw error;
+//   }
+// }
+
+// https://images-api.nasa.gov/search?q=mars
+
+// https://images.nasa.gov/search?q=mars&page=2&media=image,video,audio&yearStart=1920&yearEnd=2024
+// https://images-api.nasa.gov/search?q=mars&media_type=image&year_start=1920&year_end=2024&page_size=1000
+
+
+
+
+
+/**
+ try {
+    const response = await fetch(`https://images-api.nasa.gov/search?q=mars`)
+    if (!response.ok) {
+      throw new Error('There was a error displaying rovers media.')
+    }
+    const nasaData = await response.json()
+    // console.log(nasaData.collection.items, '<-- FROM API CALL IN OALLMARS')
+    let nasaData2 = nasaData.collection.items
+    let parsedNasaData = nasaData2.filter((asset: {}) => {
+      //  console.log(asset.data[0].nasa_id, '<-- should be nasa IDs')
+        return asset.data[0].nasa_id.includes('PIA')
+    })
+    let parsedImageCollection = parsedNasaData
+
+    await parsedImageCollection.map((item: {}) => {
+      // console.log(item.data[0].nasa_id)
+      let nasaId = item.data[0].nasa_id
+      fetch(`http://images-api.nasa.gov/asset/${nasaId}`)
+      .then(res => res.json())
+      .then((data) => {
+        // console.log(data.collection.items[0].href)
+        piaPictures.push(data.collection.items[0].href)
+      })
+      // let nasaIdPic = fetchNasaPic
+      // console.log(nasaIdPic, '<-- SHOULD BE PICS')
+    })
+    let piaPictures: String[] = []
+    // console.log(piaPictures, '<-- FOR IMAGES')
+
+    return piaPictures
+  } catch (error) {
+    console.log('Error fetching data:', error)
+    throw error;
+  }
+  // try {
+  //   const response2 = await fetch(``)
+  // }
+};
+*/
+
+// export const OallMars = async () => {
+//     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
+//     let nasaDataFetched = await fetchNasaData.json()
+//     let nasaData = nasaDataFetched
+//     // console.log(nasaData)
+//     return nasaData
+// }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // export const phobos = async () => {
 //     try {
@@ -167,6 +292,26 @@ export const olympusMons = async () => {
     return nasaData
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// export const ascraeusMons = async () => {
+//     try {
+//         const response = await fetch(`https://images-api.nasa.gov/search?q=ascraeus-Mons`)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
+
+// };
+
+
 export const ascraeusMons = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -174,6 +319,26 @@ export const ascraeusMons = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// export const pavonisMons = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
+
+// };
+
 
 export const pavonisMons = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
@@ -182,7 +347,24 @@ export const pavonisMons = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// export const arisaMons = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
+// };
 export const arisaMons = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -190,7 +372,24 @@ export const arisaMons = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// export const vallesMarineris = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
+// };
 export const vallesMarineris = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -198,7 +397,24 @@ export const vallesMarineris = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// export const argyrePlanitia = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
+// };
 export const argyrePlanitia = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -206,7 +422,24 @@ export const argyrePlanitia = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// export const candorChasma = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
+// };
 export const candorChasma = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -214,7 +447,24 @@ export const candorChasma = async () => {
     // console.log(nasaData)
     return nasaData
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// export const aresVallis = async () => {
+//     try {
+//         const response = await fetch(``)
+//         if(!response.ok) {
+//             throw new Error('There was a error displaying rovers media.')
+//         }
+//         const nasaData = await response.json()
+//         
+//         console.log(nasaData.photos)
+//         return nasaData.photos
+//     } catch (error) {
+//         console.log('Error fetching data:', error)
+//         throw error;
+// 
+// }
 
+// };
 export const aresVallis = async () => {
     let fetchNasaData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/`)
     let nasaDataFetched = await fetchNasaData.json()
@@ -223,7 +473,7 @@ export const aresVallis = async () => {
     return nasaData
 }
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // GET /search?q={q}
 // GET /asset/{nasa_id}
 

@@ -1,0 +1,16 @@
+.media-gallery {
+    display: flex;
+}
+
+.media-item {
+
+}
+
+.favorites-radio-button-parent {
+    display: flex;
+}
+
+.radio-button {
+    width: 3vw;
+    accent-color: inherit;
+}

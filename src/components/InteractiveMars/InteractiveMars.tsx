@@ -1,4 +1,5 @@
 import './InteractiveMars.css';
+import { Link } from 'react-router-dom'
 
 import MainMarsImage from '../../assets/MARS-Viking.jpg';
 import clickablePhobosMoon from '../../assets/Phobos.jpg';
@@ -11,13 +12,15 @@ function InteractiveMars() {
     return (
         <div className='interactive-zone'>
             <div className='mars-parent-container'>
-                <h2 className='clickable-mars-title'>
-                    Mars
-                    <span className='hover-text-mars-title'>See all the images of Mars</span>
-                </h2>
+                <Link to='/AllMarsMedia'>
+                    <h2 className='clickable-mars-title'>
+                        Mars
+                        <span className='hover-text-mars-title'>See all the images of Mars</span>
+                    </h2>
+                </Link>
                 <img src={MainMarsImage} alt='Mars' className='main-mars-image' />
                 <div className='rover-wrapper'>
-                <span className='hover-text-rovers'>Rovers</span>
+                    <span className='hover-text-rovers'>Rovers</span>
                     <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
                     <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
                 </div>
