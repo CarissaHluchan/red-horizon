@@ -1,16 +1,28 @@
 .media-gallery {
+    margin-top: 5vh;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .media-item {
+    padding: 1vw;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    margin: .5vw;
+}
 
+.single-thumnail {
+    height: 25vh;
+    width: auto;
 }
 
 .favorites-radio-button-parent {
     display: flex;
+    color: var(--secondary-color);
 }
 
 .radio-button {
-    width: 3vw;
-    accent-color: inherit;
+    width: 2vw;
+    accent-color: var(--primary-color);
 }

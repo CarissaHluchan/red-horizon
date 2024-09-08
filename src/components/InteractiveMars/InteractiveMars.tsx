@@ -24,7 +24,7 @@ function InteractiveMars() {
                     <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
                     <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
                 </div>
-                <div className='square'></div>
+                {/* <div className='square'></div> */}
             </div>
             <div className='moons'>
                 <div className='moons-and-titles'>

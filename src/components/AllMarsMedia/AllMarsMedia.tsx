@@ -52,7 +52,7 @@ function AllMarsMedia({ allMarsData }: AllMarsMediaProps) {
       {allMarsData.map(photo => (
         <div key={photo.id} className="media-item">
           <Link to={`/AllMarsMedia/${photo.id}`}>
-            <img src={photo.img_src} alt={`${photo.title}`} />
+            <img className='single-thumnail' src={photo.img_src} alt={`${photo.title}`} />
           </Link>
           <div className='favorites-radio-button-parent'>
             <p>Add to favorites</p>
