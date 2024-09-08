@@ -29,14 +29,20 @@ function InteractiveMars() {
                 {/* <div className='square'></div> */}
             </div>
             <div className='moons'>
-                <div className='moons-and-titles'>
-                    <div className='moon-titles'>Phobos</div>
-                    <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon' />
-                </div>
-                <div className='moons-and-titles'>
-                    <div className='moon-titles'>Deimos</div>
-                    <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon' />
-                </div>
+                <Link to='/mars/phobos'>
+                    <div className='phobos-wrapper'>
+                        <div className='phobos-title'>Phobos</div>
+                        <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon' />
+                        <img src={GuiTarget} alt='GUI target on Phobos' className='gui-target-phobos' />
+                    </div>
+                </Link>
+                <Link to='mars/deimos'>
+                    <div className='deimos-wrapper'>
+                        <div className='deimos-title'>Deimos</div>
+                        <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon' />
+                        <img src={GuiTarget} alt='GUI target on Deimos' className='gui-target-deimos' />
+                    </div>
+                </Link>
             </div>
         </div>
     )

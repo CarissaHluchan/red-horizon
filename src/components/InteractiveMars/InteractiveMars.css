@@ -88,8 +88,8 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    right: 9%; 
-    top: 90%;
+    right: 14%; 
+    top: 95%;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -113,34 +113,98 @@
     /* border: 2px solid cyan; */
 }
 
-.moons-and-titles {
+
+
+
+.phobos-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: max(110px, 27vw);
+    height: auto;
     /* border: 2px solid red; */
 }
 
-
-
-
-.moon-titles {
+.phobos-title {
+    color: var(--white);
+    text-decoration: none;
     font-family: var(--clickable-font);
     font-size: 4vw;
 }
 
 .clickable-phobos-moon {
-    width: max(110px, 27vw);
+    width: 100%;
     height: auto;
     margin-left: 2vw;
 }
 
-.clickable-deimos-moon {
+.gui-target-phobos {
+    width: max(130px, 35vw);
+    height: 32vw;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.phobos-wrapper:hover .gui-target-phobos {
+    transform: scale(1);
+}
+
+
+
+
+
+
+.deimos-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: max(110px, 27vw);
     height: auto;
+    /* border: 2px solid red; */
+}
+
+.deimos-title {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--clickable-font);
+    font-size: 4vw;
+}
+
+.clickable-deimos-moon {
+    width: 100%;
+    height: auto;
+}
+
+.gui-target-deimos {
+    width: max(130px, 32vw);
+    height: 25vw;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.deimos-wrapper:hover .gui-target-deimos {
+    transform: scale(1);
 }
 
 /*---------------------// Hover //--------------------*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------// Test //--------------------*/
 .square {
     position: relative;
     width: 100px;
