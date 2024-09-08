@@ -30,7 +30,7 @@ export const rovers = async () => {
 //     // console.log(nasaData)
 //     return nasaData.photos
 // }
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // export const AllMars = async () => {
 //     try {
@@ -57,6 +57,8 @@ export const OallMars = async () => {
     // console.log(nasaData)
     return nasaData
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 // export const phobos = async () => {
