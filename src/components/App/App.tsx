@@ -1,8 +1,23 @@
 import './App.css';
-import { AllMars, rovers } from '../APICalls/APICalls';
+import { 
+  fetchMarsData,
+  allMars, 
+  deimos, 
+  phobos,
+  polarIceCaps,
+  rovers,
+  olmpusMons,
+  ascraeusMons,
+  pavonisMons,
+  arsiaMons,
+  vallesMarineris,
+  argyrePlanitia,
+  candorChasma,
+  aresVallis
+} from '../APICalls/APICalls';
 import LandingPage from '../LandingPage/LandingPage';
 import AllMarsMedia from '../AllMarsMedia/AllMarsMedia';
-import DynamicMedia from '../DynamicMeida/DynamicMeida';
+import DynamicMeida from '../DynamicMeida/DynamicMeida';
 import Favorites from '../Favorites/Favorites';
 import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -14,23 +29,13 @@ function App() {
   const [allMarsData, setAllMarsData] = useState<any[]>([]);
   const [roverData, setRoverData] = useState<any[]>([]);
 
-  const fetchAllMarsData = async () => {
+  const fetchData = async (query: string, setter: React.Dispatch<React.SetStateAction<any[]>>) => {
     try {
-      const data = await AllMars();
-      setAllMarsData(data);
-      console.log(data, "All Mars Data");
+      const data = await fetchMarsData(query);
+      setter(data);
+      console.log(data, `${query} Data`);
     } catch (error) {
-      console.log('Error fetching Mars data:', error);
-    }
-  };
-
-  const fetchRoverData = async () => {
-    try {
-      const data = await rovers();
-      setRoverData(data);
-      console.log(data, '<-- Updated API response');
-    } catch (error) {
-      console.error('Error fetching rover data:', error);
+      console.log(`Error fetching ${query} data:`, error);
     }
   };
 
@@ -44,7 +49,7 @@ function App() {
       <LandingPage />
       <Routes>
         <Route path='/AllMarsMedia' element={<AllMarsMedia allMarsData={allMarsData} />} />
-        <Route path='/mars/:media' element={<DynamicMedia />} />
+        <Route path='/mars/:media' element={<DynamicMeida />} />
         <Route path='/mars/:id' element={<SingleMediaDetails />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
