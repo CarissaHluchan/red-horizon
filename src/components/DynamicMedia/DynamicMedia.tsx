@@ -14,14 +14,15 @@ interface DynamicMediaProps {
     title: string;
   }
   
-  function DynamicMedia({ data, title }: DynamicMediaProps) {
+  function DynamicMedia({ data, title ,id ,img_src,description,title,date_created}: DynamicMediaProps) {
     return (
       <div className="media-gallery">
         <h3>{title}</h3>
         {data.map(photo => (
           <div key={photo.id} className="media-item">
-            <Link to={`/media/${photo.id}`}>
+            <Link to={`/media/${photo.id}`} >
               <img className='single-thumbnail' src={photo.img_src} alt={photo.title} />
+              <label className='sinfle-tital' src={photo.title}
             </Link>
             <div className='favorites-radio-button-parent'>
               <p>Add to favorites</p>

@@ -31,11 +31,11 @@
 .clickable-mars-title {
     color: var(--white);
     font-family: var(--clickable-font);
-    font-size: 6vw;
+    font-size: calc(var(--mars-width) / 12);
     margin: 0;
     position: absolute;
-    right: 8vw;
-    top: -10vh;
+    right: 10vw;
+    top: -10vw;
 }
 
 .hover-text-mars-title {
@@ -44,7 +44,7 @@
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
     right: -2vw;
-    top: 17vh;
+    top: 12.5vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -57,10 +57,10 @@
 
 
 .gui-target-mars-title {
-    width: 27vw;
+    width: calc(var(--mars-width) / 3);
     position: absolute;
-    top: -15%;
-    right: -23%;
+    top: 0vh;
+    right: -4vw;
     transform: scale(0);
     transition: transform 0.3s ease-in-out;
 }
@@ -204,7 +204,7 @@
 .ice-cap-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: -7vh;
+    top: -7vw;
     right: 40vw;
 }
 
@@ -285,9 +285,10 @@
 /*-----------------// ascraeus-mons //---------------*/
 .ascraeus-mons-wrapper {
     position: absolute;
-    width: 18vw;
-    top: 47%;
-    right: 67%;
+    width: calc(var(--mars-width) / 4);
+    height: auto;
+    top: 32vw;
+    right: 66vw;
 }
 
 .gui-target-ascraeus-mons {
@@ -325,14 +326,14 @@
 /*-----------------// pavonis-mons //---------------*/
 .pavonis-mons-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 53%;
     right: 71%;
 }
 
 .gui-target-pavonis-mons {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.25);
@@ -365,14 +366,14 @@
 /*-----------------// arsia-mons //---------------*/
 .arsia-mons-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 60%;
     right: 73%;
 }
 
 .gui-target-arsia-mons {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.25);
@@ -405,14 +406,14 @@
 /*-----------------// valles-marineris //---------------*/
 .valles-marineris-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 66%;
     right: 51%;
 }
 
 .gui-target-valles-marineris {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.50);
@@ -445,14 +446,14 @@
 /*-----------------// argyre-planitia //---------------*/
 .argyre-planitia-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 77%;
     right: 38%;
 }
 
 .gui-target-argyre-planitia {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.50);
@@ -486,14 +487,14 @@
 /*-----------------// candor-chasma //---------------*/
 .candor-chasma-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 68%;
     right: 34%;
 }
 
 .gui-target-candor-chasma {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.50);
@@ -527,14 +528,14 @@
 /*-----------------// ares-vallis //---------------*/
 .ares-vallis-wrapper {
     position: absolute;
-    width: 18vw;
+    width: calc(var(--mars-width) / 4);
     top: 51%;
     right: 23%;
 }
 
 .gui-target-ares-vallis {
     position: absolute;
-    width: 18vw;
+    width: 100%;
     top: 0%;
     right: 0%;
     transform: scale(0.50);
