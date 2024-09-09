@@ -8,7 +8,9 @@
   
   --primary-font: "Open Sans", sans-serif;
   --title-font: "Protest Guerrilla", sans-serif;
-  --clickable-font: "Orbitron", sans-serif;;
+  --clickable-font: "Orbitron", sans-serif;
+
+  --mars-width: max(330px, 75vw);
 }
 
 /* .open-sans {

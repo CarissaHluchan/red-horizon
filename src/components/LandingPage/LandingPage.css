@@ -17,7 +17,12 @@ h1 {
     font-size: max(18px, 2vw);
 }
 
-.title-directions {
+.title-directions,
+.title-directions-2 {
     color: var(--secondary-color);
     font-size: max(13px, 1.5vw);
+}
+
+.title-directions-2 {
+    margin-bottom: 12vh;
 }
