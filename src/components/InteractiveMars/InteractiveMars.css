@@ -29,8 +29,8 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    right: 9%; 
-    top: 90%;
+    right: -4%;
+    top: 146%;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -50,6 +50,19 @@
     margin-top: 5vh;
     display: block;
     object-position: center;
+}
+
+.gui-target-mars-title {
+    width: 17vh;
+    position: absolute;
+    top: -15%;
+    right: -23%;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.clickable-mars-title:hover .gui-target-mars-title {
+    transform: scale(1);
 }
 
 /*-----------------------// rover //------------------------*/
@@ -101,7 +114,6 @@
 }
 
 /*-------------------// Moons //-----------------------*/
-
 .moons {
     width: 100%;
     display: flex;
@@ -113,9 +125,7 @@
     /* border: 2px solid cyan; */
 }
 
-
-
-
+/*-------------------// Phobos //------------------*/
 .phobos-wrapper {
     display: flex;
     flex-direction: column;
@@ -150,11 +160,7 @@
     transform: scale(1);
 }
 
-
-
-
-
-
+/*-------------------// Deimos //------------------*/
 .deimos-wrapper {
     display: flex;
     flex-direction: column;
@@ -188,20 +194,39 @@
     transform: scale(1);
 }
 
-/*---------------------// Hover //--------------------*/
+/*---------------------// targets //--------------------*/
 
+.gui-target-ice-cap {
+    width: 50vw;
+}
 
+.gui-target-olmpus-mons {
+    width: 50vw;
+}
 
+.gui-target-ascraeus-mons {
+    width: 50vw;
+}
 
+.gui-target-pavonis-mons {
+    width: 50vw;
+}
 
+.gui-target-arsia-mons {
+    width: 50vw;
+}
 
+.gui-target-valles-marineris {
+    width: 50vw;
+}
 
+.gui-target-argyre-planitia {
+    width: 50vw;
+}
 
-
-
-
-
-
+.gui-target-candor-chasma {
+    width: 50vw;
+}
 
 
 /*---------------------// Test //--------------------*/

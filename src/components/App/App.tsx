@@ -1,6 +1,5 @@
 import './App.css';
 import {
-  fetchMarsData,
   allMars,
   deimos,
   phobos,
@@ -33,9 +32,13 @@ interface Photo {
   date_created: string;
 }
 
+export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olmpusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '' ;
+ 
 function App() {
   // State to hold data for all queries
+  // Record
   const [marsData, setMarsData] = useState<Record<string, Photo[]>>({});
+  const [userClick, setUserClick] = useState<MarsDataType>('');
 
   // const [allMarsData, setAllMarsData] = useState<Photo[]>([]);
 
@@ -47,7 +50,7 @@ function App() {
         ...prevData,
         [query]: data
       }));
-      console.log(data, `${query} Data`);
+      console.log(data, `${query} Data <><><><><><SNKFJ`);
     } catch (error) {
       console.log(`Error fetching ${query} data:`, error);
     }
@@ -70,14 +73,21 @@ function App() {
   }, []);
 
   // Get the query parameter from the route
-  const { media } = useParams<{ media: string }>();
+  // const { media } = useParams<{ media: string }>();
+
+  // console.log('Media parameter:', media);
+
+  // Additional debugging info
+  // console.log('Data for media:', data);
+
+  // data={marsData[`.${media}`] || []}
 
   return (
     <>
-      <LandingPage />
+      <LandingPage handleClick={setUserClick}/>
       <Routes>
         <Route path='/AllMarsMedia' element={<AllMarsMedia allMarsData={marsData.allMars || []} />} />
-        <Route path='/mars/:media' element={<DynamicMedia data={marsData[media || ''] || []} title="Mars Media" />} />
+        <Route path='/mars/:media' element={<DynamicMedia data={marsData[userClick]  || []} title="Mars Media" />} />
         <Route path='/mars/:id' element={<SingleMediaDetails />} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />

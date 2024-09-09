@@ -1,7 +1,12 @@
 import './LandingPage.css';
 import InteractiveMars from '../InteractiveMars/InteractiveMars';
+import { MarsDataType } from '../App/App';
 
-function LandingPage() {
+interface LandingPageProps {
+    handleClick: (target: MarsDataType) => void;
+}
+
+function LandingPage({ handleClick }: LandingPageProps) {
 
     return (
         <div>
@@ -11,7 +16,7 @@ function LandingPage() {
                 <div className='title-directions'>Click around and discover NASA's images of Mars</div>
                 <div className='title-directions'>Scroll down to explore the Horizon</div>
             </header>
-            <InteractiveMars />
+            <InteractiveMars handleClick={handleClick}/>
         </div>
     )
 }
