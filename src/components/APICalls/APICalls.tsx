@@ -85,7 +85,7 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
   export const phobos = () => fetchMarsData('phobos');
   export const polarIceCaps = () => fetchMarsData('polar-Ice-Caps');
   export const rovers = () => fetchMarsData('rovers');
-  export const olmpusMons = () => fetchMarsData('olmpus-Mons');
+  export const olympusMons = () => fetchMarsData('olympus-Mons');
   export const ascraeusMons = () => fetchMarsData('ascraeus-Mons');
   export const pavonisMons = () => fetchMarsData('pavonis-Mons');
   export const arsiaMons = () => fetchMarsData('arsia-Mons');

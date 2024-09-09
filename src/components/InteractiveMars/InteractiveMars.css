@@ -195,38 +195,367 @@
 }
 
 /*---------------------// targets //--------------------*/
-
-.gui-target-ice-cap {
-    width: 50vw;
+/*-----------------// Ice Caps //---------------*/
+.ice-cap-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
-.gui-target-olmpus-mons {
-    width: 50vw;
+.gui-target-ice-cap {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ice-cap-wrapper:hover .gui-target-ice-cap {
+    transform: scale(1);
+}
+
+.hover-text-ice-cap {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.ice-cap-wrapper:hover .hover-text-ice-cap{
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+/*-----------------// Olympus Mons //---------------*/
+.olympus-mons-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 36%;
+    right: 75%;
+}
+
+.gui-target-olympus-mons {
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.25);
+    transition: transform 0.3s ease-in-out;
+}
+
+.olympus-mons-wrapper:hover .gui-target-olympus-mons {
+    transform: scale(1);
+}
+
+.hover-text-olympus-mons {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.olympus-mons-wrapper:hover .hover-text-olympus-mons{
+    visibility: visible;
+    opacity: 1; 
+}
+
+/*-----------------// ascraeus-mons //---------------*/
+.ascraeus-mons-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 48%;
+    right: 67%;
 }
 
 .gui-target-ascraeus-mons {
-    width: 50vw;
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.25);
+    transform: scale(0.35);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ascraeus-mons-wrapper:hover .gui-target-ascraeus-mons{
+    transform: scale(1);
+}
+
+.hover-text-ascraeus-mons {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.ascraeus-mons-wrapper:hover .hover-text-ascraeus-mons{
+    visibility: visible;
+    opacity: 1; 
+}
+
+/*-----------------// pavonis-mons //---------------*/
+.pavonis-mons-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
 .gui-target-pavonis-mons {
-    width: 50vw;
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pavonis-mons-wrapper:hover .gui-target-pavonis-mons{
+    transform: scale(1);
+}
+
+.hover-text-pavonis-mons {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.pavonis-mons-wrapper:hover .hover-text-pavonis-mons{
+    visibility: visible;
+    opacity: 1; 
+}
+
+/*-----------------// arsia-mons //---------------*/
+.arsia-mons-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
 .gui-target-arsia-mons {
-    width: 50vw;
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.arsia-mons-wrapper:hover .gui-target-arsia-mons {
+    transform: scale(1);
+}
+
+.hover-text-arsia-mons {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.arsia-mons-wrapper:hover .hover-text-arsia-mons {
+    visibility: visible;
+    opacity: 1; 
+}
+
+/*-----------------// valles-marineris //---------------*/
+.valles-marineris-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
 .gui-target-valles-marineris {
-    width: 50vw;
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.valles-marineris-wrapper:hover .gui-target-valles-marineris {
+    transform: scale(1);
+}
+
+.hover-text-valles-marineris {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.valles-marineris-wrapper:hover .hover-text-valles-marineris {
+    visibility: visible;
+    opacity: 1; 
+}
+
+/*-----------------// argyre-planitia //---------------*/
+.argyre-planitia-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
 .gui-target-argyre-planitia {
-    width: 50vw;
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.argyre-planitia-wrapper:hover .gui-target-argyre-planitia {
+    transform: scale(1);
+}
+
+.hover-text-argyre-planitia {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.argyre-planitia-wrapper:hover .hover-text-argyre-planitia {
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+/*-----------------// candor-chasma //---------------*/
+.candor-chasma-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
 }
 
 .gui-target-candor-chasma {
-    width: 50vw;
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
 }
+
+.candor-chasma-wrapper:hover .gui-target-candor-chasma {
+    transform: scale(1);
+}
+
+.hover-text-candor-chasma {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.candor-chasma-wrapper:hover .hover-text-candor-chasma {
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+/*-----------------// ares-vallis //---------------*/
+.ares-vallis-wrapper {
+    position: absolute;
+    width: 18vw;
+    top: 1%;
+    right: 41%;
+}
+
+.gui-target-ares-vallis {
+    position: absolute;
+    width: 18vw;
+    top: 0%;
+    right: 0%;
+    transform: scale(0.50);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ares-vallis-wrapper:hover .gui-target-ares-vallis {
+    transform: scale(1);
+}
+
+.hover-text-ares-vallis {
+    color: var(--white);
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    position: absolute; 
+    right: 14%; 
+    top: 95%;
+    font-family: var(--clickable-font);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.ares-vallis-wrapper:hover .hover-text-ares-vallis {
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+
+
+
+
+
 
 
 /*---------------------// Test //--------------------*/

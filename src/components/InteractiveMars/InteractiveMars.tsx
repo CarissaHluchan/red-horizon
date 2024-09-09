@@ -26,52 +26,79 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
                     </h2>
                 </Link>
                 <img src={MainMarsImage} alt='Mars' className='main-mars-image' />
-                <Link to='/mars/rovers' onClick={() => {handleClick('rovers')}}>
+                <Link to='/mars/rovers' onClick={() => { handleClick('rovers') }}>
                     <div className='rover-wrapper'>
                         <span className='hover-text-rovers'>Rovers</span>
                         <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
                         <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
                     </div>
                 </Link>
-                <Link to='/mars/polarIceCaps' onClick={() => {handleClick('polarIceCaps')}}>
-                    <img src={GuiTarget} alt='GUI target on polor ice cap ' className='gui-target-ice-cap' />
+                <Link to='/mars/polarIceCaps' onClick={() => { handleClick('polarIceCaps') }}>
+                    <div className='ice-cap-wrapper'>
+                        <span className='hover-text-ice-cap'>Polar Ice Caps</span>
+                        <img src={GuiTarget} alt='GUI target on polor ice cap ' className='gui-target-ice-cap' />
+                    </div>
                 </Link>
-                <Link to='/mars/olmpusMons' onClick={() => {handleClick('olmpusMons')}}>
-                    <img src={GuiTarget} alt='GUI target on Olmpus Mons' className='gui-target-olmpus-mons' />
+                <Link to='/mars/olympusMons' onClick={() => { handleClick('olympusMons') }}>
+                    <div className='olympus-mons-wrapper'>
+                        <span className='hover-text-olympus-mons'>Olympus Mons</span>
+                        <img src={GuiTarget} alt='GUI target on Olympus Mons' className='gui-target-olympus-mons' />
+                    </div>
                 </Link>
-                <Link to='/mars/ascraeusMons' onClick={() => {handleClick('ascraeusMons')}}>
-                    <img src={GuiTarget} alt='GUI target on Ascraeus Mons' className='gui-target-ascraeus-mons' />
+                <Link to='/mars/ascraeusMons' onClick={() => { handleClick('ascraeusMons') }}>
+                    <div className='ascraeus-mons-wrapper'>
+                        <span className='hover-text-ascraeus-mons'>Ascraeus Mons</span>
+                        <img src={GuiTarget} alt='GUI target on Ascraeus Mons' className='gui-target-ascraeus-mons' />
+                    </div>
                 </Link>
-                <Link to='/mars/pavonisMons' onClick={() => {handleClick('pavonisMons')}}>
-                    <img src={GuiTarget} alt='GUI target on Pavonis Mons' className='gui-target-pavonis-mons' />
+                <Link to='/mars/pavonisMons' onClick={() => { handleClick('pavonisMons') }}>
+                    <div className='pavonis-mons-wrapper'>
+                        <span className='hover-text-pavonis-mons'>Pavonis Mons</span>
+                        <img src={GuiTarget} alt='GUI target on Pavonis Mons' className='gui-target-pavonis-mons' />
+                    </div>
                 </Link>
-                <Link to='/mars/arsiaMons' onClick={() => {handleClick('arsiaMons')}}>
-                    <img src={GuiTarget} alt='GUI target on Arsia Mons ' className='gui-target-arsia-mons' />
+                <Link to='/mars/arsiaMons' onClick={() => { handleClick('arsiaMons') }}>
+                    <div className='arsia-mons-wrapper'>
+                        <span className='hover-text-arsia-mons'>Arsia Mons</span>
+                        <img src={GuiTarget} alt='GUI target on Arsia Mons ' className='gui-target-arsia-mons' />
+                    </div>
                 </Link>
-                <Link to='/mars/vallesMarineris' onClick={() => {handleClick('vallesMarineris')}}>
-                    <img src={GuiTarget} alt='GUI target on Valles Marineris' className='gui-target-valles-marineris' />
+                <Link to='/mars/vallesMarineris' onClick={() => { handleClick('vallesMarineris') }}>
+                    <div className='valles-marineris-wrapper'>
+                        <span className='hover-text-valles-marineris'>Valles Marineris</span>
+                        <img src={GuiTarget} alt='GUI target on Valles Marineris' className='gui-target-valles-marineris' />
+                    </div>
                 </Link>
-                <Link to='/mars/argyrePlanitia' onClick={() => {handleClick('argyrePlanitia')}}>
-                    <img src={GuiTarget} alt='GUI target on Argyre Planitia' className='gui-target-argyre-planitia' />
+                <Link to='/mars/argyrePlanitia' onClick={() => { handleClick('argyrePlanitia') }}>
+                    <div className='argyre-planitia-wrapper'>
+                        <span className='hover-text-argyre-planitia'>Argyre Planitia</span>
+                        <img src={GuiTarget} alt='GUI target on Argyre Planitia' className='gui-target-argyre-planitia' />
+                    </div>
                 </Link>
-                <Link to='/mars/candorChasma' onClick={() => {handleClick('candorChasma')}}>
-                    <img src={GuiTarget} alt='GUI target on Candor Chasma' className='gui-target-candor-chasma' />
+                <Link to='/mars/candorChasma' onClick={() => { handleClick('candorChasma') }}>
+                    <div className='candor-chasma-wrapper'>
+                        <span className='hover-text-candor-chasma'>Candor Chasma</span>
+                        <img src={GuiTarget} alt='GUI target on Candor Chasma' className='gui-target-candor-chasma' />
+                    </div>
                 </Link>
-                <Link to='/mars/aresVallis' onClick={() => {handleClick('aresVallis')}}>
-                    <img src={GuiTarget} alt='GUI target on Ares Vallis' className='gui-target-ares-vallis' />
+                <Link to='/mars/aresVallis' onClick={() => { handleClick('aresVallis') }}>
+                    <div className='ares-vallis-wrapper'>
+                        <span className='hover-text-ares-vallis'>Ares Vallis</span>
+                        <img src={GuiTarget} alt='GUI target on Ares Vallis' className='gui-target-ares-vallis' />
+                    </div>
                 </Link>
 
                 {/* <div className='square'></div> */}
             </div>
             <div className='moons'>
-                <Link to='/mars/phobos' onClick={() => {handleClick('phobos')}}>
+                <Link to='/mars/phobos' onClick={() => { handleClick('phobos') }}>
                     <div className='phobos-wrapper'>
                         <div className='phobos-title'>Phobos</div>
                         <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon' />
                         <img src={GuiTarget} alt='GUI target on Phobos' className='gui-target-phobos' />
                     </div>
                 </Link>
-                <Link to='mars/deimos' onClick={() => {handleClick('deimos')}}>
+                <Link to='mars/deimos' onClick={() => { handleClick('deimos') }}>
                     <div className='deimos-wrapper'>
                         <div className='deimos-title'>Deimos</div>
                         <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon' />

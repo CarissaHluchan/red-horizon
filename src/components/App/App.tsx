@@ -5,7 +5,7 @@ import {
   phobos,
   polarIceCaps,
   rovers,
-  olmpusMons,
+  olympusMons,
   ascraeusMons,
   pavonisMons,
   arsiaMons,
@@ -32,7 +32,7 @@ interface Photo {
   date_created: string;
 }
 
-export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olmpusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '' ;
+export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '' ;
  
 function App() {
   // State to hold data for all queries
@@ -62,7 +62,7 @@ function App() {
     fetchData('phobos', phobos);
     fetchData('deimos', deimos);
     fetchData('polarIceCaps', polarIceCaps);
-    fetchData('olmpusMons', olmpusMons);
+    fetchData('olympusMons', olympusMons);
     fetchData('ascraeusMons', ascraeusMons);
     fetchData('pavonisMons', pavonisMons);
     fetchData('arsiaMons', arsiaMons);
