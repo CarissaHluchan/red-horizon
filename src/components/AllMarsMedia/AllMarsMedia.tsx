@@ -1,5 +1,7 @@
 import './AllMarsMedia.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 
 interface Link {
   href: string;

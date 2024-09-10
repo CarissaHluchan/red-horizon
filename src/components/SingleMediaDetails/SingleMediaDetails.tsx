@@ -1,5 +1,5 @@
 import './SingleMediaDetails.css';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 interface Photo {
   id: string;
@@ -10,23 +10,37 @@ interface Photo {
 }
 
 interface SingleMediaDetailsProps {
-  data: Photo;
+  allPhotoData: Photo[];
+  data: Photo | null;
   handleAddToFavorites: (photo: Photo) => void;
 }
 
-function SingleMediaDetails({ data, handleAddToFavorites }: SingleMediaDetailsProps) {
+function SingleMediaDetails({ allPhotoData, data, handleAddToFavorites }: SingleMediaDetailsProps) {
 
+  const { id } = useParams<{ id: string }>();
+  
+  // console.log(data, '<-- FROM SINGLE MEDIA')
+  
+  const photo = allPhotoData.find(photo => photo.id === id);
+  
   const handleFavoriteClick = () => {
-    handleAddToFavorites(data);
+    if (photo) {
+      console.log(photo, '<-- FROM FAVORITE CLICK IN SINGLE MEDIA');
+      handleAddToFavorites(photo);
+    }
+  }
+
+  if (!photo) {
+    return <div>Media not found. <Link to="/AllMarsMedia">Back to All Mars Media</Link></div>;
   }
 
   return (
     <div className='single-media-detail-wrapper'>
       <Link to='/allMarsMedia' className='slingle-media-back-button'>Back to All Mars Media</Link>
-      <div className='single-media-title'>{data.title}</div>
-      <img className='single-media-main-image' src={data.img_src} alt={data.description} />
-      <p className='single-media-description'>{data.description}</p>
-      <div className='single-media-date'>{data.date_created}</div>
+      <div className='single-media-title'>{photo.title}</div>
+      <img className='single-media-main-image' src={photo.img_src} alt={photo.description} />
+      <p className='single-media-description'>{photo.description}</p>
+      <div className='single-media-date'>{photo.date_created}</div>
       <div className='radio-button-parent'>
         <label>Add to favorites</label>
         <input
@@ -39,5 +53,6 @@ function SingleMediaDetails({ data, handleAddToFavorites }: SingleMediaDetailsPr
     </div>
   );
 }
+
 
 export default SingleMediaDetails;

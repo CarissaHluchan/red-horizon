@@ -11,6 +11,7 @@ interface Photo {
 }
 
 interface DynamicMediaProps {
+  title: string;
   data: Photo[];
   handleAddToFavorites: (photo: Photo) => void;
 }
