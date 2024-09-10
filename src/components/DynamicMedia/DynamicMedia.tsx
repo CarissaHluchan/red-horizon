@@ -12,9 +12,10 @@ interface Photo {
 
 interface DynamicMediaProps {
   data: Photo[];
+  handleAddToFavorites: (photo: Photo) => void;
 }
 
-function DynamicMedia({ data }: DynamicMediaProps) {
+function DynamicMedia({ data, handleAddToFavorites }: DynamicMediaProps) {
   return (
     <section className='.media-section'>
       <Link to='/favorites' className='favorites-button'>Favorites</Link>
@@ -26,7 +27,11 @@ function DynamicMedia({ data }: DynamicMediaProps) {
             </Link>
             <div className='favorites-radio-button-parent'>
               <label>Add to favorites</label>
-              <input type='radio' className='radio-button' />
+              <input 
+              type='radio' 
+              className='radio-button'
+              onChange={() => handleAddToFavorites(photo)}
+              />
             </div>
           </div>
         ))}

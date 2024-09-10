@@ -11,9 +11,15 @@ interface Photo {
 
 interface SingleMediaDetailsProps {
   data: Photo;
+  handleAddToFavorites: (photo: Photo) => void;
 }
 
-function SingleMediaDetails({ data }: SingleMediaDetailsProps) {
+function SingleMediaDetails({ data, handleAddToFavorites }: SingleMediaDetailsProps) {
+
+  const handleFavoriteClick = () => {
+    handleAddToFavorites(data);
+  }
+
   return (
     <div className='single-media-detail-wrapper'>
       <Link to='/allMarsMedia' className='slingle-media-back-button'>Back to All Mars Media</Link>
@@ -23,7 +29,11 @@ function SingleMediaDetails({ data }: SingleMediaDetailsProps) {
       <div className='single-media-date'>{data.date_created}</div>
       <div className='radio-button-parent'>
         <label>Add to favorites</label>
-        <input type="radio" className='favorite-radio-button' />
+        <input
+          type="radio"
+          className='favorite-radio-button'
+          onChange={handleFavoriteClick}
+        />
       </div>
       <Link to='/favorites' className='see-favorites'>See Favorites</Link>
     </div>

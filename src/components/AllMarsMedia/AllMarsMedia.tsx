@@ -43,10 +43,16 @@ interface Photo {
 
 interface AllMarsMediaProps {
   allMarsData: Photo[];
+  handleAddToFavorites: (photo: Photo) => void;
 }
 
 
-function AllMarsMedia({ allMarsData }: AllMarsMediaProps) {
+function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) {
+
+  const handleFavoriteClick = (photo: Photo) => {
+    handleAddToFavorites(photo);
+  };
+
   return (
     <section className='media-section'>
       <Link to='/favorites' className='favorites-button'>See Favorites</Link>
@@ -58,7 +64,11 @@ function AllMarsMedia({ allMarsData }: AllMarsMediaProps) {
             </Link>
             <div className='favorites-radio-button-parent'>
               <p>Add to favorites</p>
-              <input type="radio" className='radio-button'></input>
+              <input
+                type="radio"
+                className='radio-button'
+                onChange={() => handleFavoriteClick(photo)}
+              />
             </div>
           </div>
         ))}

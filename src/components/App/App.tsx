@@ -83,15 +83,22 @@ function App() {
       <LandingPage handleClick={setUserClick} />
       <Routes>
         <Route path='/AllMarsMedia' element={<AllMarsMedia
-          allMarsData={marsData.allMars || []} />} />
+          allMarsData={marsData.allMars || []} 
+          handleAddToFavorites={handleAddToFavorites}
+          />} />
         <Route path='/mars/:media' element={<DynamicMedia
-          data={marsData[userClick] || []} />} />
+          data={marsData[userClick] || []} 
+          handleAddToFavorites={handleAddToFavorites}
+          />} />
         <Route path='/media/:id' element={
           marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
-            ? <SingleMediaDetails data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!} />
+            ? <SingleMediaDetails 
+                data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!}
+                handleAddToFavorites={handleAddToFavorites}
+              />
             : <ErrorPage error="Media not found" />
         } />
-        <Route path='/favorites' element={<Favorites favorites={favorites}/>} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error={404} />} />
       </Routes>
