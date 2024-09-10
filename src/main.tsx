@@ -8,6 +8,6 @@ createRoot(document.getElementById('root')!).render(
   <HashRouter basename='/'>
     <StrictMode>
       <App />
-    </StrictMode>,
+    </StrictMode>
   </HashRouter>
 )
