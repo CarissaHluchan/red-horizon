@@ -17,7 +17,7 @@ interface DynamicMediaProps {
 
 function DynamicMedia({ data, handleAddToFavorites }: DynamicMediaProps) {
   return (
-    <section className='.media-section'>
+    <section className='media-section'>
       <Link to='/favorites' className='favorites-button'>Favorites</Link>
       <div className='media-gallery'>
         {data.map(photo => (
