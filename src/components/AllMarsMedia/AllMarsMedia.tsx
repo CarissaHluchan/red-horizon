@@ -61,6 +61,7 @@ function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) 
       <div className="media-gallery">
         {allMarsData.map(photo => (
           <div key={photo.id} className="media-item">
+            <h3 className='photo-title'>{photo.title}</h3>
             <Link to={`/AllMarsMedia/${photo.id}`}>
               <img className='single-thumnail' src={photo.img_src} alt={`${photo.title}`} />
             </Link>

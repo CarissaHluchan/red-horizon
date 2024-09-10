@@ -23,6 +23,7 @@ function DynamicMedia({ data, handleAddToFavorites }: DynamicMediaProps) {
       <div className='media-gallery'>
         {data.map(photo => (
           <div key={photo.id} className='media-item'>
+            <h3 className='photo-title'>{photo.title}</h3>
             <Link to={`/media/${photo.id}`}>
               <img className='single-thumbnail' src={photo.img_src} alt={photo.title} />
             </Link>

@@ -48,6 +48,11 @@
   grid-template-rows: auto;
 }
 
+.photo-title {
+  color: var(--primary-color);
+  font-size: max(16px, 2vw);
+}
+
 .media-item {
   display: flex;
   flex-direction: column;

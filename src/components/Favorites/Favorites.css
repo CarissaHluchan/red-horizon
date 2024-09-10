@@ -8,6 +8,11 @@
   font-size: max(16px, 4vw);
 }
 
+.photo-title {
+  color: var(--primary-color);
+  font-size: max(16px, 2vw);
+}
+
 .media-item {
   background-color: var(--black);
   display: flex;
