@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family: var(--clickable-font);
+    font-weight: 600;
     /* border: 2px solid red; */
 }
 
@@ -28,17 +29,26 @@
 }
 
 /*------------------// Mars Title //------------------------*/
-.clickable-mars-title {
-    color: var(--white);
+.mars-title-wrapper {
     font-family: var(--clickable-font);
+    position: absolute;
+    width: calc(var(--mars-width) / 4);
+    right: 9vw;
+    top: -14vw;
+}
+
+.mars-title {
+    color: var(--white);
+    /* font-family: var(--clickable-font); */
     font-size: calc(var(--mars-width) / 12);
     margin: 0;
     position: absolute;
-    right: 10vw;
-    top: -10vw;
+    /* right: 10vw;
+    top: -10vw; */
 }
 
 .hover-text-mars-title {
+    width: calc(var(--mars-width) / 4);
     visibility: hidden; 
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
@@ -50,7 +60,7 @@
     margin: 0;
 }
 
-.clickable-mars-title:hover .hover-text-mars-title {
+.mars-title-wrapper:hover .hover-text-mars-title {
     visibility: visible; /* Show the extra text on hover */
     opacity: 1; /* Fade in the text */
 }
@@ -65,7 +75,7 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.clickable-mars-title:hover .gui-target-mars-title {
+.mars-title-wrapper:hover .gui-target-mars-title {
     transform: scale(1);
 }
 
@@ -227,9 +237,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 15vw;
-    right: 4%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -269,9 +279,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -310,9 +320,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -327,8 +337,8 @@
 .pavonis-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 53%;
-    right: 71%;
+    top: 37.5vw;
+    right: 70.5vw;
 }
 
 .gui-target-pavonis-mons {
@@ -350,9 +360,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 15vw;
-    right: 4%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -367,8 +377,8 @@
 .arsia-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 60%;
-    right: 73%;
+    top: 42vw;
+    right: 73vw;
 }
 
 .gui-target-arsia-mons {
@@ -390,9 +400,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -407,8 +417,8 @@
 .valles-marineris-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 66%;
-    right: 51%;
+    top: 48vw;
+    right: 50vw;
 }
 
 .gui-target-valles-marineris {
@@ -430,9 +440,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -447,8 +457,8 @@
 .argyre-planitia-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 77%;
-    right: 38%;
+    top: 57vw;
+    right: 40vw;
 }
 
 .gui-target-argyre-planitia {
@@ -470,9 +480,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -488,8 +498,8 @@
 .candor-chasma-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 68%;
-    right: 34%;
+    top: 51vw;
+    right: 33vw;
 }
 
 .gui-target-candor-chasma {
@@ -511,9 +521,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
@@ -529,8 +539,8 @@
 .ares-vallis-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
-    top: 51%;
-    right: 23%;
+    top: 35vw;
+    right: 23vw;
 }
 
 .gui-target-ares-vallis {
@@ -552,9 +562,9 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.3s ease-in-out;
     position: absolute; 
-    width: 16vw;
-    right: -2%;
-    top: 2px;
+    width: calc(var(--mars-width) / 5);
+    right: 1vw;
+    top: 1vw;
     font-family: var(--clickable-font);
     font-size: 2vw;
     margin: 0;
