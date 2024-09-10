@@ -9,6 +9,7 @@
 }
 
 .media-item {
+  background-color: var(--black);
   display: flex;
   flex-direction: column;
   justify-content: center;
