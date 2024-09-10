@@ -97,14 +97,17 @@
   justify-content: center;
   align-items: center;
   margin: 2vw;
-  width: 100%;
+  /* width: 100%; */
+  box-sizing: border-box; /* Include padding and border in the element's width and height */
 }
 
 .single-media-main-image {
   border: 1px solid var(--white);
   border-radius: 5px;
-  max-width: 100%;
+  max-width: 100%; 
   height: auto; 
+  max-width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's width and height */
 }
 
 /*---------------------// Date //---------------------*/

@@ -1,4 +1,5 @@
 import './Favorites.css';
+import { Link } from 'react-router-dom';
 
 interface Photo {
   id: string;
@@ -20,7 +21,9 @@ function Favorites({ favorites }: FavoritesProps) {
       <div className='media-gallery'>
         {favorites.map(photo => (
           <div key={photo.id} className='media-item'>
-            <img src={photo.img_src} alt={photo.title} className='single-thumnail'/>
+            <Link to={`/media/${photo.id}`}>
+              <img className='single-thumbnail' src={photo.img_src} alt={photo.title} />
+            </Link>
           </div>
         ))}
       </div>
