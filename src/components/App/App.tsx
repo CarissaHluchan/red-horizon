@@ -32,8 +32,8 @@ interface Photo {
   date_created: string;
 }
 
-export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '' ;
- 
+export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '';
+
 function App() {
   // State to hold data for all queries
   // Record
@@ -72,23 +72,19 @@ function App() {
     fetchData('aresVallis', aresVallis);
   }, []);
 
-  // Get the query parameter from the route
-  // const { media } = useParams<{ media: string }>();
-
-  // console.log('Media parameter:', media);
-
-  // Additional debugging info
-  // console.log('Data for media:', data);
-
-  // data={marsData[`.${media}`] || []}
-
   return (
     <>
-      <LandingPage handleClick={setUserClick}/>
+      <LandingPage handleClick={setUserClick} />
       <Routes>
-        <Route path='/AllMarsMedia' element={<AllMarsMedia allMarsData={marsData.allMars || []} />} />
-        <Route path='/mars/:media' element={<DynamicMedia data={marsData[userClick]  || []} title="Mars Media" />} />
-        <Route path='/mars/:id' element={<SingleMediaDetails />} />
+        <Route path='/AllMarsMedia' element={<AllMarsMedia
+          allMarsData={marsData.allMars || []} />} />
+        <Route path='/mars/:media' element={<DynamicMedia
+          data={marsData[userClick] || []} title="Mars Media" />} />
+        <Route path='/media/:id' element={
+          marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
+            ? <SingleMediaDetails data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!} />
+            : <ErrorPage error="Media not found" />
+        } />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error={404} />} />
