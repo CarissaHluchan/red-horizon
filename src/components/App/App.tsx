@@ -43,9 +43,10 @@ function App() {
 
   // const [allMarsData, setAllMarsData] = useState<Photo[]>([]);
 
-  const handleAddToFavorites = (photo: Photo) => {
+  const handleAddToFavorites = (photoItem: Photo) => {
+    console.log(photoItem, '<-- IN HANDLE ADD TO FAVORITES')
     setFavorites(prevFavorites => 
-    [...prevFavorites, photo]
+    [...prevFavorites, photoItem]
     );
   }
 
@@ -56,7 +57,7 @@ function App() {
         ...prevData,
         [query]: data
       }));
-      console.log(data, `${query} Data <><><><><><SNKFJ`);
+      console.log(data, `${query} DATA IN APP`);
     } catch (error) {
       console.log(`Error fetching ${query} data:`, error);
     }
@@ -82,19 +83,17 @@ function App() {
     <>
       <LandingPage handleClick={setUserClick} />
       <Routes>
-        <Route path='/AllMarsMedia' element={<AllMarsMedia
-          allMarsData={marsData.allMars || []} 
-          handleAddToFavorites={handleAddToFavorites}
-          />} />
+        <Route path="/AllMarsMedia" element={<AllMarsMedia allMarsData={ marsData['allMars'] || [] } handleAddToFavorites={ handleAddToFavorites } />} />
+        <Route path="/AllMarsMedia/:id" element={<SingleMediaDetails allPhotoData={ marsData['allMars'] || [] } data={null} handleAddToFavorites={ handleAddToFavorites }/>} />
         <Route path='/mars/:media' element={<DynamicMedia
-          data={marsData[userClick] || []} 
-          handleAddToFavorites={handleAddToFavorites}
-          />} />
+          data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={ handleAddToFavorites } />} />
+        <Route path='/media/:id' element={<SingleMediaDetails allPhotoData={marsData[userClick] || []} data={null} handleAddToFavorites={ handleAddToFavorites } />}  />
         <Route path='/media/:id' element={
           marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
             ? <SingleMediaDetails 
+                allPhotoData={marsData[userClick] || []}
                 data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!}
-                handleAddToFavorites={handleAddToFavorites}
+                handleAddToFavorites={ handleAddToFavorites }
               />
             : <ErrorPage error="Media not found" />
         } />

@@ -71,7 +71,7 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
           date_created: item.data[0].date_created
         }));
   
-      console.log(photos);
+      // console.log(photos);
       return photos;
     } catch (error) {
       console.log(`Error fetching data for ${query}:`, error);

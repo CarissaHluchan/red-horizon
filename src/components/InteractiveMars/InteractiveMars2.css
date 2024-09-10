@@ -1,0 +1,576 @@
+/* 
+***************************************************************************************
+*[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]*
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ALTERNATE CSS BELOW //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+*<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^+^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>|<^>*
+***************************************************************************************
+*/
+
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// BIG ONES AND APPLICABLE TO MULTIPLE //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.interactive-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--clickable-font);
+}
+
+.box-for-mars-background {
+  background: no-repeat url('../../assets/MARS-Viking.jpg');
+  width: max(330px, 75vw);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin-top: 5vh;
+  margin: 12vh auto 0 ;
+  display: block;
+  object-position: center;
+  object-fit: cover;
+  background-size: 100% 100%;
+}
+
+.link-wrapper-all {
+  position: absolute;
+  z-index: 1;
+  top: 39%;
+  left: 40%;
+  width: 25%;
+  height: 25%;
+}
+
+.mars-feature-wrappers-all {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.gui-tgt-background-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 30%;
+  height: 30%;
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  z-index: 2;
+}
+
+.gui-target-all {
+  width: 150%;
+  border: .5em;
+  transform: scale(0.35);
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  z-index: 3;
+}
+
+.hover-text-all {
+  width: 180%;
+  color: var(--white);
+  /* visibility: hidden;
+  opacity: 0; */
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  position: relative; 
+  font-family: var(--clickable-font);
+  font-size: 110%;
+  text-decoration: none;
+}
+
+.gui-tgt-background-all:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transform: scale(1.4);
+  animation: blink 0.35s linear;
+}
+
+.gui-target-all:hover {
+  transform: scale(1);
+}
+
+.gui-target-all:hover ~ .hover-text-all {
+  visibility: visible;
+  opacity: 1; 
+}
+
+@keyframes blink {
+  25% {
+    opacity: 0.10;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.10;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*-------------------// Moons //-----------------------*/
+
+.moons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phobos-wrapper,
+.deimos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max(110px, 27vw);
+  height: auto;
+  /* border: 2px solid red; */
+}
+
+.phobos-title,
+.deimos-title {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--clickable-font);
+  font-size: 4vw;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ALL MARS ELEMENTS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.mars-parent-container {
+  width: 100vw;
+  position: relative;
+  /* position: absolute; */
+  /* border: 2px solid red; */
+}
+
+.clickable-mars-title {
+  color: var(--white);
+  font-family: var(--clickable-font);
+  font-size: 6vw;
+  margin: 0;
+  position: absolute;
+  right: 9%;
+  top: -3%;
+}
+
+.hover-text-mars-title {
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  position: absolute; 
+  right: -4%;
+  top: 146%;
+  font-family: var(--clickable-font);
+  font-size: 2vw;
+  margin: 0;
+}
+
+.clickable-mars-title:hover .hover-text-mars-title {
+  visibility: visible; /* Show the extra text on hover */
+  opacity: 1; /* Fade in the text */
+}
+
+.gui-target-mars-title {
+  width: 17vh;
+  position: absolute;
+  top: -15%;
+  right: -23%;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.clickable-mars-title:hover .gui-target-mars-title {
+  transform: scale(1);
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// MOONS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+/*-------------------// Phobos //------------------*/
+/* .phobos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max(110px, 27vw);
+  height: auto;
+} */
+
+/* .phobos-title {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--clickable-font);
+  font-size: 4vw;
+} */
+
+.clickable-phobos-moon {
+  width: 100%;
+  height: auto;
+  margin-left: 2vw;
+}
+
+.gui-target-phobos {
+  width: max(130px, 35vw);
+  height: 32vw;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.phobos-wrapper:hover .gui-target-phobos {
+  transform: scale(1);
+}
+
+/*-------------------// Deimos //------------------*/
+/* .deimos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max(110px, 27vw);
+  height: auto;
+} */
+
+/* .deimos-title {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--clickable-font);
+  font-size: 4vw;
+} */
+
+.clickable-deimos-moon {
+  width: 100%;
+  height: auto;
+}
+
+.gui-target-deimos {
+  width: max(130px, 32vw);
+  height: 25vw;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.deimos-wrapper:hover .gui-target-deimos {
+  transform: scale(1);
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ROVER //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.rover-link-wrapper {
+  top: 40% !important;
+  left: 23% !important;
+  width: 25%;
+  height: 25%;
+}
+
+.rover-wrapper {
+  width: 15vw;
+  height: 7.5vw;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.clickalbe-rover {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.gui-target-rover {
+  width: 100%;
+  top: 0%;
+  left: 0;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.rover-wrapper:hover .gui-target-rover {
+  transform: scale(1);
+}
+
+.hover-text-rovers {
+  color: var(--white);
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  position: absolute; 
+  right: 0%; 
+  top: 0%;
+  font-family: var(--clickable-font);
+  font-size: 2vw;
+  margin: 0;
+}
+
+.rover-wrapper:hover .hover-text-rovers {
+  visibility: visible; /* Show the extra text on hover */
+  opacity: 1; /* Fade in the text */
+}
+
+
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ICE CAPS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.ice-cap-wrapper {
+  bottom: 126% !important;
+  left: 24% !important;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// OLYMPUS MONS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.olympus-mons-wrapper {
+  top: 15% !important;
+  right: 106% !important;
+}
+
+.gui-target-olympus-mons-background {
+  width: 20%;
+  height: 20%;
+}
+
+/* .gui-target-olympus-mons {
+  top: 10%;
+} */
+
+.hover-text-olympus-mons {
+  width: 250%;
+  top: 90%;
+  left: 60%;
+  font-size: 100%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ASCREAUS MONS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.ascraeus-mons-wrapper {
+  top: 62% !important;
+  right: 71% !important;
+}
+
+.gui-target-ascraeus-mons-background {
+  width: 20%;
+  height: 20%;
+}
+
+/* .gui-target-ascraeus-mons {
+  top: 12%;
+} */
+
+.hover-text-ascraeus-mons {
+  bottom: 160%;
+  left: 14%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// PAVONIS MONS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.pavonis-mons-wrapper {
+  top: 88% !important;
+  right: 89% !important;
+}
+
+.gui-target-pavonis-mons-background {
+  width: 20%;
+  height: 20%;
+}
+
+/* .gui-target-pavonis-mons {
+  top: 12%;
+} */
+
+.hover-text-pavonis-mons {
+  bottom: 75%;
+  left: 145%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ARSIA MONS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.arsia-mons-wrapper {
+  top: 110% !important;
+  right: 97% !important;
+}
+
+.gui-target-arsia-mons-background {
+  width: 20%;
+  height: 20%;
+}
+
+/* .gui-target-arsia-mons {
+  top: 12%;
+} */
+
+.hover-text-arsia-mons {
+  bottom: 40%;
+  left: 160%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// VALLES MARINERIS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.valles-marineris-wrapper {
+  top: 133% !important;
+  right: 8% !important;
+}
+
+.gui-target-valles-marineris-background {
+  width: 30%;
+  height: 30%;
+}
+
+/* .gui-target-valles-marineris {
+  top: 10%;
+} */
+
+.hover-text-valles-marineris {
+  bottom: 150%;
+  left: 36%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ARGYRE PLANITIA //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.argyre-planitia-wrapper {
+  top: 176% !important;
+  left: 28% !important;
+}
+
+.gui-target-argyre-planitia-background {
+  width: 30%;
+  height: 30%;
+}
+
+/* .gui-target-argyre-planitia {
+  top: 10%;
+} */
+
+.hover-text-argyre-planitia {
+  top: 10%;
+  left: 36%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// CANDOR CHASMA //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.candor-chasma-wrapper {
+  top: 135% !important;
+  left: 60% !important;
+}
+
+.gui-target-candor-chasma-background {
+  width: 30%;
+  height: 30%;
+}
+
+/* .gui-target-candor-chasma {
+  top: 10%;
+} */
+
+.hover-text-candor-chasma {
+  bottom: 75%;
+  left: 145%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// ARES VALLIS //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.ares-vallis-wrapper {
+  top: 80% !important;
+  left: 111% !important;
+}
+
+.gui-target-ares-vallis-background {
+  width: 30%;
+  height: 30%;
+}
+
+/* .gui-target-ares-vallis {
+  top: 10%;
+} */
+
+.hover-text-ares-vallis {
+  top: 10%;
+  left: 50%;
+}
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~// MEDIA GALLERY //~~~~~~~~~~~~~~~~~~~~//
+*/
+
+.media-gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-gallery {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: auto;
+}
+
+.media-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  margin: .5vw;
+  object-fit: contain;
+  a {
+    display: flex;
+    width: 100%;
+    height: 85%;
+    object-fit: contain;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.single-thumnail {
+  height: 25vh;
+  width: auto;
+}
+
+.favorites-radio-button-parent {
+    display: flex;
+}
+
+.radio-button {
+    width: 3vw;
+    accent-color: inherit;
+}
+
+
+/* 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// NAME ME //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+*/
