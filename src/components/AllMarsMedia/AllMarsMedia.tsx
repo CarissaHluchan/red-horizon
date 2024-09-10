@@ -48,19 +48,22 @@ interface AllMarsMediaProps {
 
 function AllMarsMedia({ allMarsData }: AllMarsMediaProps) {
   return (
-    <div className="media-gallery">
-      {allMarsData.map(photo => (
-        <div key={photo.id} className="media-item">
-          <Link to={`/AllMarsMedia/${photo.id}`}>
-            <img className='single-thumnail' src={photo.img_src} alt={`${photo.title}`} />
-          </Link>
-          <div className='favorites-radio-button-parent'>
-            <p>Add to favorites</p>
-            <input type="radio" className='radio-button'></input>
+    <section className='media-section'>
+      <Link to='/favorites' className='favorites-button'>See Favorites</Link>
+      <div className="media-gallery">
+        {allMarsData.map(photo => (
+          <div key={photo.id} className="media-item">
+            <Link to={`/AllMarsMedia/${photo.id}`}>
+              <img className='single-thumnail' src={photo.img_src} alt={`${photo.title}`} />
+            </Link>
+            <div className='favorites-radio-button-parent'>
+              <p>Add to favorites</p>
+              <input type="radio" className='radio-button'></input>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

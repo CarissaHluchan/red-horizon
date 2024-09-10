@@ -39,9 +39,15 @@ function App() {
   // Record
   const [marsData, setMarsData] = useState<Record<string, Photo[]>>({});
   const [userClick, setUserClick] = useState<MarsDataType>('');
+  const [favorites, setFavorites] = useState<Photo[]>([]);
 
   // const [allMarsData, setAllMarsData] = useState<Photo[]>([]);
 
+  const handleAddToFavorites = (photo: Photo) => {
+    setFavorites(prevFavorites => 
+    [...prevFavorites, photo]
+    );
+  }
 
   const fetchData = async (query: string, fetchFunction: () => Promise<Photo[]>) => {
     try {
@@ -79,13 +85,13 @@ function App() {
         <Route path='/AllMarsMedia' element={<AllMarsMedia
           allMarsData={marsData.allMars || []} />} />
         <Route path='/mars/:media' element={<DynamicMedia
-          data={marsData[userClick] || []} title="Mars Media" />} />
+          data={marsData[userClick] || []} />} />
         <Route path='/media/:id' element={
           marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
             ? <SingleMediaDetails data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!} />
             : <ErrorPage error="Media not found" />
         } />
-        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites}/>} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error={404} />} />
       </Routes>

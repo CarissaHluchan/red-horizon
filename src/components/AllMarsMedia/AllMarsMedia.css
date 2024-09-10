@@ -26,8 +26,21 @@
     width: 2vw;
     accent-color: var(--primary-color);
 } */
+.media-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-
+.favorites-button {
+  color: var(--black);
+  font-weight: 700;
+  background-color: var(--tertiary-color);
+  padding: 1vw;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 3vw;
+}
 
 .media-gallery {
   display: grid;
@@ -45,11 +58,13 @@
   border-radius: 5px;
   margin: .5vw;
   object-fit: contain;
+
   a {
     display: flex;
     width: 100%;
     height: 85%;
     object-fit: contain;
+
     img {
       width: 100%;
       object-fit: contain;
@@ -63,11 +78,10 @@
 }
 
 .favorites-radio-button-parent {
-    display: flex;
+  display: flex;
 }
 
 .radio-button {
-    width: 3vw;
-    accent-color: inherit;
+  width: 3vw;
+  accent-color: inherit;
 }
-
