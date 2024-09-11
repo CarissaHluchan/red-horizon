@@ -81,7 +81,7 @@ describe('allMarsMedia spec.', () => {
     cy.visit('http://localhost:5173/red-horizon/')
   });
 
-  bit('should see a header', () => {
+  it('should see a header', () => {
     cy.get('h1').contains('Red Horizon')
       .get('.title-question').contains('Do you want to see more about the Red Planet?')
       .get('.title-directions').contains('Click around and discover NASA\'s images of Mars')
