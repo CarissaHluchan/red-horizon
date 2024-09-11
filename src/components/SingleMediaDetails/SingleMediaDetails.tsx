@@ -15,7 +15,7 @@ interface SingleMediaDetailsProps {
   handleAddToFavorites: (photo: Photo) => void;
 }
 
-function SingleMediaDetails({ allPhotoData, data, handleAddToFavorites }: SingleMediaDetailsProps) {
+function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaDetailsProps) {
 
   const { id } = useParams<{ id: string }>();
 
