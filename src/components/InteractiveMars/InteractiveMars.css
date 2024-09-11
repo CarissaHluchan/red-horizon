@@ -200,6 +200,7 @@
 .ice-cap-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
+    height: 15%;
     top: -7vw;
     right: 40vw;
 }
@@ -231,8 +232,8 @@
     margin: 0;
 }
 
-.ice-cap-wrapper:hover .hover-text-ice-cap{
-    visibility: visible;
+.ice-cap-wrapper:hover .hover-text-ice-cap {
+    visibility: visible !important;
     opacity: 1; 
 }
 
