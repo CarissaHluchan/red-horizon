@@ -11,8 +11,8 @@ const { code } = useParams();
 const errorCode = error || code
 
     return (
-        <section>
-            <h2>{`We are so sorry, there been a ${errorCode} error! Please try again later.`}</h2>
+        <section className='error-section'>
+            <h4>{`We are so sorry, there been a ${errorCode} error! Please try again later.`}</h4>
         </section>
     )
 }

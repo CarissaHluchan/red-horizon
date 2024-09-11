@@ -1,4 +1,3 @@
-
 const apiKey = import.meta.env.VITE_API_KEY
 
 interface Link {
@@ -60,7 +59,6 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
       }
       const data: AllMarsResponse = await response.json();
   
-      // Filter and map the API data to the desired format
       const photos: Photo[] = data.collection.items
         .filter(item => item.data.length > 0 && item.data[0].nasa_id.includes('PIA'))
         .map(item => ({
@@ -70,8 +68,7 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
           title: item.data[0].title,
           date_created: item.data[0].date_created
         }));
-  
-      // console.log(photos);
+
       return photos;
     } catch (error) {
       console.log(`Error fetching data for ${query}:`, error);

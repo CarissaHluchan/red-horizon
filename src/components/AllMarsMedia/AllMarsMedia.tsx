@@ -1,39 +1,5 @@
 import './AllMarsMedia.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
-
-interface Link {
-  href: string;
-  rel: string;
-  render: string;
-}
-
-interface PhotoData {
-  description: string;
-  title: string;
-  photographer: string;
-  location: string;
-  nasa_id: string;
-  date_created: string;
-  keywords: string[];
-  media_type: string;
-  center: string;
-}
-
-interface PhotoItem {
-  href: string;
-  data: PhotoData[];
-  links: Link[];
-}
-
-interface AllMarsResponse {
-  collection: {
-    version: string;
-    href: string;
-    items: PhotoItem[];
-  };
-}
 
 interface Photo {
   id: string;
@@ -48,7 +14,6 @@ interface AllMarsMediaProps {
   handleAddToFavorites: (photo: Photo) => void;
 }
 
-
 function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) {
 
   const handleFavoriteClick = (photo: Photo) => {
@@ -61,6 +26,7 @@ function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) 
       <div className="media-gallery">
         {allMarsData.map(photo => (
           <div key={photo.id} className="media-item">
+            <h3 className='photo-title'>{photo.title}</h3>
             <Link to={`/AllMarsMedia/${photo.id}`}>
               <img className='single-thumnail' src={photo.img_src} alt={`${photo.title}`} />
             </Link>
