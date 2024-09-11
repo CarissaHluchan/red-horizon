@@ -38,6 +38,10 @@ function App() {
   const [userClick, setUserClick] = useState<MarsDataType>('');
   const [favorites, setFavorites] = useState<Photo[]>([]);
 
+  const { id } = useParams<{ id: string }>();
+
+  const selectedPhoto = marsData[userClick]?.find(photo => photo.id === id);
+
   const handleAddToFavorites = (photoItem: Photo) => {
     setFavorites(prevFavorites =>
       [...prevFavorites, photoItem]
@@ -55,7 +59,7 @@ function App() {
       console.log(`Error fetching ${query} data:`, error);
       throw (`Error fetching ${query} data:`)
     }
-  };
+  }
 
   useEffect(() => {
     fetchData('allMars', allMars);
@@ -107,14 +111,15 @@ function App() {
         <Route
           path='/media/:id'
           element={
-            marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
+            selectedPhoto
               ? <SingleMediaDetails
                 allPhotoData={marsData[userClick] || []}
-                data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!}
+                data={selectedPhoto}
                 handleAddToFavorites={handleAddToFavorites}
               />
               : <ErrorPage error="Media not found" />
-          } />
+          }
+        />
         <Route
           path='/favorites'
           element={<Favorites
