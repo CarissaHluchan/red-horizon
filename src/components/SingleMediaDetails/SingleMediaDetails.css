@@ -1,5 +1,4 @@
 .single-media-detail-wrapper {
-  /* background-color: var(--favorite-bg); */
   display: flex;
   flex-direction: column;
 }
@@ -13,11 +12,10 @@
   flex-direction: row;
   align-content: center;
   justify-content: flex-end;
-  /* border: 2px solid red; */
 }
 
 .slingle-media-back-button {
-  height: max(25px, 3vw);
+  height: max(25px, 2vw);
   color: var(--black);
   font-weight: 700;
   background-color: var(--tertiary-color);
@@ -26,8 +24,6 @@
   border-radius: 5px;
   margin-top: 2vw;
   margin-right: 3vw;
-  /* margin: 3vw; */
-  /* border: 1px solid green; */
 }
 
 /*--------------------//Meida Wrapper //---------------------------*/
@@ -43,7 +39,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 .single-media-title {
@@ -58,7 +53,6 @@
   flex-direction: column;
   align-items: center;
   margin: 3vw;
-  /* border: 1px solid green; */
 }
 
 .radio-button-parent {
@@ -97,8 +91,7 @@
   justify-content: center;
   align-items: center;
   margin: 2vw;
-  /* width: 100%; */
-  box-sizing: border-box; /* Include padding and border in the element's width and height */
+  box-sizing: border-box;
 }
 
 .single-media-main-image {
@@ -107,7 +100,7 @@
   max-width: 100%; 
   height: auto; 
   max-width: 100%;
-  box-sizing: border-box; /* Include padding and border in the element's width and height */
+  box-sizing: border-box; 
 }
 
 /*---------------------// Date //---------------------*/
@@ -138,11 +131,9 @@
   color: var(--secondary-color);
   font-size: max(15px, 4vw);
   margin-top: 3vw;
-  /* border: 1px solid green; */
 }
 
 .single-media-description {
   font-size: max(14px, 2.5vw);
   margin-bottom: 6vw;
-  /* border: 1px solid red; */
 }

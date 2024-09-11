@@ -1,4 +1,3 @@
-import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 import './DynamicMedia.css';
 import { Link } from 'react-router-dom';
 
@@ -25,14 +24,17 @@ function DynamicMedia({ data, handleAddToFavorites }: DynamicMediaProps) {
           <div key={photo.id} className='media-item'>
             <h3 className='photo-title'>{photo.title}</h3>
             <Link to={`/media/${photo.id}`}>
-              <img className='single-thumbnail' src={photo.img_src} alt={photo.title} />
+              <img
+                className='single-thumbnail'
+                src={photo.img_src}
+                alt={photo.title} />
             </Link>
             <div className='favorites-radio-button-parent'>
               <label>Add to favorites</label>
-              <input 
-              type='radio' 
-              className='radio-button'
-              onChange={() => handleAddToFavorites(photo)}
+              <input
+                type='radio'
+                className='radio-button'
+                onChange={() => handleAddToFavorites(photo)}
               />
             </div>
           </div>

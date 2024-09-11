@@ -21,10 +21,17 @@ function Favorites({ favorites }: FavoritesProps) {
       <div className='media-gallery'>
         {favorites.map(photo => (
           <div key={photo.id} className='media-item'>
-            <h3 className='photo-title'>{photo.title}</h3>
+            <p className='media-item-title'>{photo.title}</p>
             <Link to={`/media/${photo.id}`}>
-              <img className='single-thumbnail' src={photo.img_src} alt={photo.title} />
+              <img
+                className='single-thumbnail'
+                src={photo.img_src}
+                alt={photo.title} />
             </Link>
+            <p className='media-item-date'>
+              <span className='date-taken' >{'DATE TAKEN: '}</span>
+              {photo.date_created}
+            </p>
           </div>
         ))}
       </div>

@@ -1,39 +1,5 @@
 import './AllMarsMedia.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
-
-interface Link {
-  href: string;
-  rel: string;
-  render: string;
-}
-
-interface PhotoData {
-  description: string;
-  title: string;
-  photographer: string;
-  location: string;
-  nasa_id: string;
-  date_created: string;
-  keywords: string[];
-  media_type: string;
-  center: string;
-}
-
-interface PhotoItem {
-  href: string;
-  data: PhotoData[];
-  links: Link[];
-}
-
-interface AllMarsResponse {
-  collection: {
-    version: string;
-    href: string;
-    items: PhotoItem[];
-  };
-}
 
 interface Photo {
   id: string;
@@ -47,7 +13,6 @@ interface AllMarsMediaProps {
   allMarsData: Photo[];
   handleAddToFavorites: (photo: Photo) => void;
 }
-
 
 function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) {
 

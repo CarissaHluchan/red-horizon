@@ -1,4 +1,3 @@
-import './App.css';
 import {
   allMars,
   deimos,
@@ -35,18 +34,13 @@ interface Photo {
 export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '';
 
 function App() {
-  // State to hold data for all queries
-  // Record
   const [marsData, setMarsData] = useState<Record<string, Photo[]>>({});
   const [userClick, setUserClick] = useState<MarsDataType>('');
   const [favorites, setFavorites] = useState<Photo[]>([]);
 
-  // const [allMarsData, setAllMarsData] = useState<Photo[]>([]);
-
   const handleAddToFavorites = (photoItem: Photo) => {
-    console.log(photoItem, '<-- IN HANDLE ADD TO FAVORITES')
-    setFavorites(prevFavorites => 
-    [...prevFavorites, photoItem]
+    setFavorites(prevFavorites =>
+      [...prevFavorites, photoItem]
     );
   }
 
@@ -57,9 +51,9 @@ function App() {
         ...prevData,
         [query]: data
       }));
-      console.log(data, `${query} DATA IN APP`);
     } catch (error) {
       console.log(`Error fetching ${query} data:`, error);
+      throw (`Error fetching ${query} data:`)
     }
   };
 
@@ -83,23 +77,54 @@ function App() {
     <>
       <LandingPage handleClick={setUserClick} />
       <Routes>
-        <Route path="/AllMarsMedia" element={<AllMarsMedia allMarsData={ marsData['allMars'] || [] } handleAddToFavorites={ handleAddToFavorites } />} />
-        <Route path="/AllMarsMedia/:id" element={<SingleMediaDetails allPhotoData={ marsData['allMars'] || [] } data={null} handleAddToFavorites={ handleAddToFavorites }/>} />
-        <Route path='/mars/:media' element={<DynamicMedia
-          data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={ handleAddToFavorites } />} />
-        <Route path='/media/:id' element={<SingleMediaDetails allPhotoData={marsData[userClick] || []} data={null} handleAddToFavorites={ handleAddToFavorites } />}  />
-        <Route path='/media/:id' element={
-          marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
-            ? <SingleMediaDetails 
+        <Route
+          path="/AllMarsMedia"
+          element={<AllMarsMedia
+            allMarsData={marsData['allMars'] || []}
+            handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route
+          path="/AllMarsMedia/:id"
+          element={<SingleMediaDetails
+            allPhotoData={marsData['allMars'] || []}
+            data={null}
+            handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route
+          path='/mars/:media'
+          element={<DynamicMedia
+            data={marsData[userClick] || []}
+            title="Mars Media"
+            handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route
+          path='/media/:id'
+          element={<SingleMediaDetails
+            allPhotoData={marsData[userClick] || []}
+            data={null}
+            handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route
+          path='/media/:id'
+          element={
+            marsData[userClick]?.find(photo => photo.id === useParams<{ id: string }>().id)
+              ? <SingleMediaDetails
                 allPhotoData={marsData[userClick] || []}
                 data={marsData[userClick]!.find(photo => photo.id === useParams<{ id: string }>().id)!}
-                handleAddToFavorites={ handleAddToFavorites }
+                handleAddToFavorites={handleAddToFavorites}
               />
-            : <ErrorPage error="Media not found" />
-        } />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
-        <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
-        <Route path='*' element={<ErrorPage error={404} />} />
+              : <ErrorPage error="Media not found" />
+          } />
+        <Route
+          path='/favorites'
+          element={<Favorites
+            favorites={favorites} />} />
+        <Route
+          path='/error/:code'
+          element={<ErrorPage error="Invalid URL" />} />
+        <Route
+          path='*'
+          element={<ErrorPage error={404} />} />
       </Routes>
     </>
   );

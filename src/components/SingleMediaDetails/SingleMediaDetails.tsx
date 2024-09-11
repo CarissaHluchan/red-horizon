@@ -19,51 +19,80 @@ function SingleMediaDetails({ allPhotoData, data, handleAddToFavorites }: Single
 
   const { id } = useParams<{ id: string }>();
 
-  // console.log(data, '<-- FROM SINGLE MEDIA')
-
   const photo = allPhotoData.find(photo => photo.id === id);
 
   const handleFavoriteClick = () => {
     if (photo) {
-      console.log(photo, '<-- FROM FAVORITE CLICK IN SINGLE MEDIA');
       handleAddToFavorites(photo);
     }
   }
 
   if (!photo) {
-    return <div>Media not found. <Link to="/AllMarsMedia">Back to All Mars Media</Link></div>;
+    return <div>
+      Media not found.
+      <Link to="/AllMarsMedia">
+        Back to All Mars Media
+      </Link>
+    </div>;
   }
 
   return (
     <div className='single-media-detail-wrapper'>
       <div className='slingle-media-back-button-wrapper'>
-        <Link to='/allMarsMedia' className='slingle-media-back-button'>Back to All Mars Media</Link>
+        <Link
+          to='/allMarsMedia'
+          className='slingle-media-back-button'>
+          Back to All Mars Media
+        </Link>
       </div>
       <div className='single-media-wrapper'>
         <div className='single-media-title-button-wrapper'>
-          <div className='single-media-title'>{photo.title}</div>
+          <div className='single-media-title'>
+            {photo.title}
+          </div>
           <div className='single-media-all-button-wrapper'>
             <div className='radio-button-parent'>
-              <label className='radio-button-label'>Add to favorites</label>
+              <label
+                className='radio-button-label'>
+                Add to favorites
+              </label>
               <input
                 type="radio"
                 className='favorite-radio-button'
                 onChange={handleFavoriteClick}
               />
             </div>
-            <Link to='/favorites' className='see-favorites'>See Favorites</Link>
+            <Link
+              to='/favorites'
+              className='see-favorites'>
+              See Favorites
+            </Link>
           </div>
         </div>
         <div className='single-media-main-image-wrapper'>
-          <img className='single-media-main-image' src={photo.img_src} alt={photo.description} />
+          <img
+            className='single-media-main-image'
+            src={photo.img_src}
+            alt={photo.description}
+          />
         </div>
         <div className='single-media-date-wrapper'>
-          <div className='single-media-date-label'>Date Created: </div>
-          <div className='single-media-date'>{photo.date_created}</div>
+          <div
+            className='single-media-date-label'>
+            Date Created:
+          </div>
+          <div className='single-media-date'>
+            {photo.date_created}
+          </div>
         </div>
         <div className='single-media-description-wrapper'>
-          <div className='single-media-description-label'>Description:</div>
-          <p className='single-media-description'>{photo.description}</p>
+          <div
+            className='single-media-description-label'>
+            Description:
+          </div>
+          <p className='single-media-description'>
+            {photo.description}
+          </p>
         </div>
       </div>
     </div>
