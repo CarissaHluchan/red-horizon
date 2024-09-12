@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+### Title:
+[//]: <> (Title and link to the deployed website []())
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Abstract:
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+An App for the curious learner who wants to know more about Mars and can explore media about the planet.
 
-Currently, two official plugins are available:
+### Technology:
+[//]: <> (Add technology you used for this project.) 
+1. React
+2. React Router
+3. VITE.js
+4. TypeScript
+5. Cypress
+6. CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation Instructions:
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+1. Click the Title to run the app.
+2. Install Cypress
+[Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
+3. > [!WARNING]
+> **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) & a [locally running API](https://github.com/turingschool-examples/overlook-api) are required to run this app.**<br>
+> _Please ensure you have both installed on your machine before proceeding._
 
-## Expanding the ESLint configuration
+- _(optional) Fork this project to your own Github account._
+- Clone the repository to your local machine.
+- `cd` into the project folder.
+- Use the `npm install` command to install the project dependencies.
+- Use the `npm start` command to run webpack.
+- Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+![Red Horizon GIF](https://github.com/user-attachments/assets/7581b964-e015-49dc-8a37-81bca8fca03c)
 
-- Configure the top-level `parserOptions` property like this:
+### Context:
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+This group project took 3 Turing students roughly 8 days or 45 hours to complete. We were in our 14th week of intensive front-end web development training.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Contributors:
+[//]: <> (Who worked on this application? Link to their GitHubs.)
+This application was built by:
+[Carissa Hluchan](https://github.com/CarissaHluchan),
+[Charles Banks](https://github.com/DRIF7ER), and
+[Marshall Hotaling](https://github.com/marshallhotaling)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Learning Goals:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
+- Incorporating a new technology that we researched and learned on our own -TypeScript
+- Gain competency with React fundamentals
+- Test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Wins + Challenges:
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+### Wins + Challenges:
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+- This was our first time working with a large-scale API, through the use of PostMan we were able to test various endpoints to get back the data we needed to display images for each of our interactive targets.
+- We taught ourselves TypeScript reading through and implementing documentation.
+- Learned advanced CSS techniques including hover, transform, and displaying <span> text
+- Did research and implemented an extension to thoroughly test hover interaction in Cypress
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
