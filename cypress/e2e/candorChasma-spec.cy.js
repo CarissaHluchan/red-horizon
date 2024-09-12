@@ -83,7 +83,7 @@ describe('candorChasma spec.', () => {
 
   it('should perform a hover and show a title of the Cander Chasma feature', () => {
     cy.get('.candor-chasma-wrapper').realHover()
-      .get('.hover-text-candor-chasma').contains('Cander Chasma')
+      .get('.hover-text-candor-chasma').contains('Candor Chasma')
       .get('.candor-chasma-wrapper').realClick()
       .get('.favorites-button').should('exist')
       .get('.media-gallery').should('exist')

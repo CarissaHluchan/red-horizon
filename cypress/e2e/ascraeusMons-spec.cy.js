@@ -83,7 +83,7 @@ describe('ascraeusMons spec.', () => {
 
   it('should perform a hover and show a title of the Ascraeus Mons feature', () => {
     cy.get('.ascraeus-mons-wrapper').realHover()
-      .get('.hover-text-ascraeus-mons').contains('Polar Ice Caps')
+      .get('.hover-text-ascraeus-mons').contains('Ascraeus Mons')
       .get('.ascraeus-mons-wrapper').realClick()
       .get('.favorites-button').should('exist')
       .get('.media-gallery').should('exist')
