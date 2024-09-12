@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY
+// const apiKey = import.meta.env.VITE_API_KEY
 
 interface Link {
   href: string;
@@ -40,13 +40,13 @@ interface Photo {
   date_created: string;
 }
 
-interface phobosResponse {
-  collection: {
-    version: string;
-    href: string;
-    items: PhotoItem[];
-  };
-}
+// interface phobosResponse {
+//   collection: {
+//     version: string;
+//     href: string;
+//     items: PhotoItem[];
+//   };
+// }
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// Dynamic code //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
