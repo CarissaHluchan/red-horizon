@@ -2,7 +2,7 @@
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-An App for the curious learner who wants to know more about Mars and can explore media about the planet.
+Mars exploration app for curious learners to discover images of the surface features of Mars, explore its moons, and images from the Mars rover expeditions.
 
 ### Technology:
 [//]: <> (Add technology you used for this project.) 
