@@ -82,6 +82,12 @@ function App() {
       <LandingPage handleClick={setUserClick} />
       <Routes>
         <Route
+           path="/"
+           element={<AllMarsMedia
+             allMarsData={marsData['allMars'] || []}
+             handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route
           path="/AllMarsMedia"
           element={<AllMarsMedia
             allMarsData={marsData['allMars'] || []}

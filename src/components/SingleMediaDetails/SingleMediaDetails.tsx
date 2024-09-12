@@ -38,10 +38,10 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
 
   return (
     <div className='single-media-detail-wrapper'>
-      <div className='slingle-media-back-button-wrapper'>
+      <div className='single-media-back-button-wrapper'>
         <Link
           to='/allMarsMedia'
-          className='slingle-media-back-button'>
+          className='single-media-back-button'>
           Back to All Mars Media
         </Link>
       </div>

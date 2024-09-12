@@ -18,7 +18,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* cypress real events commands */
+    "types": ["cypress", "node", "cypress-real-events"]
   },
   "include": ["src"]
 }

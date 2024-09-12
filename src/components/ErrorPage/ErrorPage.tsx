@@ -6,13 +6,13 @@ interface ErrorPageProps {
 }
 
 function ErrorPage({error}: ErrorPageProps) {
-const { code } = useParams();
+const { code } = useParams<{ code: string }>();
 
 const errorCode = error || code
 
     return (
         <section className='error-section'>
-            <h4>{`We are so sorry, there been a ${errorCode} error! Please try again later.`}</h4>
+            <h4>{`We are so sorry, there\'s been a ${errorCode} error! Please try again later.`}</h4>
         </section>
     )
 }
