@@ -110,20 +110,6 @@ describe('allMarsMedia spec.', () => {
   });
 
   it('should perform a hover and show a title of a surface feature', () => {
-    // cy.wait('@allMarsMedia')
-    // cy.wait('@deimos')
-    // cy.wait('@phobos')
-    // cy.wait('@polar-Ice-Caps')
-    // cy.wait('@rovers')
-    // cy.wait('olympus-Mons')
-    // cy.wait('ascraeus-Mons')
-    // cy.wait('pavonis-Mons')
-    // cy.wait('arsia-Mons')
-    // cy.wait('valles-Marineris')
-    // cy.wait('argyre-Planitia')
-    // cy.wait('candor-Chasma')
-    // cy.wait('ares-Vallis')
-
     cy.get('.mars-title-wrapper').realHover()
       .get('.hover-text-mars-title').contains('See all the images of Mars')
       .get('.mars-title-wrapper').realClick()
