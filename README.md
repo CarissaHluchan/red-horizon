@@ -54,8 +54,6 @@ This application was built by:
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
-### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 - This was our first time working with a large-scale API, through the use of PostMan we were able to test various endpoints to get back the data we needed to display images for each of our interactive targets.
 - We taught ourselves TypeScript reading through and implementing documentation.
 - Learned advanced CSS techniques including hover, transform, and displaying <span> text
