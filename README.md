@@ -13,6 +13,11 @@ Mars exploration app for curious learners to discover images of the surface feat
 5. Cypress
 6. CSS
 
+### Design:
+[Design Board](https://miro.com/app/board/uXjVKjSnglk=/)
+
+<img width="1051" alt="Screenshot 2024-09-20 at 6 12 59 PM" src="https://github.com/user-attachments/assets/0a7fba9e-23bd-458f-98ca-d27ca85c611a">
+
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1. Click the Title to run the app.
