@@ -34,7 +34,7 @@ Mars exploration app for curious learners to discover images of the surface feat
 ### Design:
 [Design Board](https://miro.com/app/board/uXjVKjSnglk=/)
 
-<img width="1051" alt="Screenshot 2024-09-20 at 6 12 59 PM" src="https://github.com/user-attachments/assets/0a7fba9e-23bd-458f-98ca-d27ca85c611a">
+<img width="1036" alt="Screenshot 2024-09-23 at 4 15 18 PM" src="https://github.com/user-attachments/assets/5985baa2-4f8a-4c1d-bb4f-c45535ce9cd4">
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
