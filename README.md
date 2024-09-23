@@ -13,15 +13,11 @@ Mars exploration app for curious learners to discover images of the surface feat
 5. Cypress
 6. CSS
 
-### Design:
-[Design Board](https://miro.com/app/board/uXjVKjSnglk=/)
-
-<img width="1051" alt="Screenshot 2024-09-20 at 6 12 59 PM" src="https://github.com/user-attachments/assets/0a7fba9e-23bd-458f-98ca-d27ca85c611a">
-
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
-1. Click the Title to run the app.
-2. _(optional) Fork this project to your own Github account._
+**1. Click the Title to run the app.**
+
+**2. _(optional) Fork this project to your own Github account._**
 > [!WARNING]
 > **[Node.js](https://nodejs.org/en), [npm](https://www.npmjs.com/) are required to run this app.**<br>
 > _Please ensure you have both installed on your machine before proceeding._
@@ -30,9 +26,15 @@ Mars exploration app for curious learners to discover images of the surface feat
 - Use the `npm install` command to install the project dependencies.
 - Use the `npm start` command to run webpack.
 - Check the console for the `PORT` and copy/paste `localhost:PORT` into your web browser.
-3. To run Cypress testing
+
+**3. To run Cypress testing**
 - in the console type `npm run cypress`
 - for issues: [Follow these instructions to install Cypress.](https://on.cypress.io/guides/installing-and-running#section-installing)
+
+### Design:
+[Design Board](https://miro.com/app/board/uXjVKjSnglk=/)
+
+<img width="1051" alt="Screenshot 2024-09-20 at 6 12 59 PM" src="https://github.com/user-attachments/assets/0a7fba9e-23bd-458f-98ca-d27ca85c611a">
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
