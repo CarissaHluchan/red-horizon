@@ -21,7 +21,7 @@ import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
 
 import { useState, useEffect } from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom';
 
 interface Photo {
   id: string;
@@ -37,6 +37,7 @@ function App() {
   const [marsData, setMarsData] = useState<Record<string, Photo[]>>({});
   const [userClick, setUserClick] = useState<MarsDataType>('');
   const [favorites, setFavorites] = useState<Photo[]>([]);
+  const navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
 
@@ -56,86 +57,107 @@ function App() {
         [query]: data
       }));
     } catch (error) {
-      console.log(`Error fetching ${query} data:`, error);
-      throw (`Error fetching ${query} data:`)
+      console.error(`Error fetching ${query} data:`, error);
+      // navigate(`/error/500`, {
+      //   state: { message: `An unexpected error occurred.` }
+      // });
     }
   }
 
   useEffect(() => {
-    fetchData('allMars', allMars);
-    fetchData('rovers', rovers);
-    fetchData('phobos', phobos);
-    fetchData('deimos', deimos);
-    fetchData('polarIceCaps', polarIceCaps);
-    fetchData('olympusMons', olympusMons);
-    fetchData('ascraeusMons', ascraeusMons);
-    fetchData('pavonisMons', pavonisMons);
-    fetchData('arsiaMons', arsiaMons);
-    fetchData('vallesMarineris', vallesMarineris);
-    fetchData('argyrePlanitia', argyrePlanitia);
-    fetchData('candorChasma', candorChasma);
-    fetchData('aresVallis', aresVallis);
-  }, []);
+    const fetchAllData = async () => {
+      await fetchData('allMars', allMars);
+      await fetchData('rovers', rovers);
+      await fetchData('phobos', phobos);
+      await fetchData('deimos', deimos);
+      await fetchData('polarIceCaps', polarIceCaps);
+      await fetchData('olympusMons', olympusMons);
+      await fetchData('ascraeusMons', ascraeusMons);
+      await fetchData('pavonisMons', pavonisMons);
+      await fetchData('arsiaMons', arsiaMons);
+      await fetchData('vallesMarineris', vallesMarineris);
+      await fetchData('argyrePlanitia', argyrePlanitia);
+      await fetchData('candorChasma', candorChasma);
+      await fetchData('aresVallis', aresVallis);
+    };
+
+    fetchAllData();
+  }, [navigate]);
 
   return (
     <>
       <LandingPage handleClick={setUserClick} />
       <Routes>
-        <Route
-           path="/"
-           element={<AllMarsMedia
-             allMarsData={marsData['allMars'] || []}
-             handleAddToFavorites={handleAddToFavorites} />}
-        />
-        <Route
-          path="/AllMarsMedia"
+
+        <Route path="/"
           element={<AllMarsMedia
             allMarsData={marsData['allMars'] || []}
-            handleAddToFavorites={handleAddToFavorites} />}
+            handleAddToFavorites={handleAddToFavorites} />} />
+        <Route path="/AllMarsMedia"
+          element={<AllMarsMedia
+            allMarsData={marsData['allMars'] || []}
+            handleAddToFavorites={handleAddToFavorites} />} />
+        <Route path="/media/:id"
+          element={selectedPhoto ? (
+            <SingleMediaDetails
+              allPhotoData={marsData[userClick] || []}
+              data={selectedPhoto}
+              handleAddToFavorites={handleAddToFavorites}
+            />
+          ) : (
+            <ErrorPage error="Media not found" />
+          )} />
+        <Route path='/mars/:media' element={<DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
+        <Route path='*' element={<ErrorPage error={404} />} />
+
+
+        {/* <Route path="/" element={<AllMarsMedia
+          allMarsData={marsData['allMars'] || []}
+          handleAddToFavorites={handleAddToFavorites} />}
         />
-        <Route
-          path="/AllMarsMedia/:id"
-          element={<SingleMediaDetails
-            allPhotoData={marsData['allMars'] || []}
-            data={null}
-            handleAddToFavorites={handleAddToFavorites} />}
+        <Route path="/AllMarsMedia" element={<AllMarsMedia
+          allMarsData={marsData['allMars'] || []}
+          handleAddToFavorites={handleAddToFavorites} />}
         />
-        <Route
-          path='/mars/:media'
-          element={<DynamicMedia
-            data={marsData[userClick] || []}
-            title="Mars Media"
-            handleAddToFavorites={handleAddToFavorites} />}
+        <Route path="/AllMarsMedia/:id" element={<SingleMediaDetails
+          allPhotoData={marsData['allMars'] || []}
+          data={null}
+          handleAddToFavorites={handleAddToFavorites} />}
         />
-        <Route
-          path='/media/:id'
-          element={<SingleMediaDetails
+        <Route path='/mars/:media' element={<DynamicMedia
+          data={marsData[userClick] || []}
+          title="Mars Media"
+          handleAddToFavorites={handleAddToFavorites} />}
+        />
+        <Route path='/media/:id' element={selectedPhoto ? (
+          <SingleMediaDetails
             allPhotoData={marsData[userClick] || []}
-            data={null}
-            handleAddToFavorites={handleAddToFavorites} />}
+            data={selectedPhoto}
+            handleAddToFavorites={handleAddToFavorites}
+          />
+        ) : (
+          <ErrorPage error="Media not found" />
+        )}
         />
-        <Route
-          path='/media/:id'
-          element={
-            selectedPhoto
-              ? <SingleMediaDetails
-                allPhotoData={marsData[userClick] || []}
-                data={selectedPhoto}
-                handleAddToFavorites={handleAddToFavorites}
-              />
-              : <ErrorPage error="Media not found" />
-          }
+
+        <Route path='/media/:id' element={<SingleMediaDetails
+          allPhotoData={marsData[userClick] || []}
+          data={null}
+          handleAddToFavorites={handleAddToFavorites} />}
         />
-        <Route
-          path='/favorites'
-          element={<Favorites
-            favorites={favorites} />} />
-        <Route
-          path='/error/:code'
-          element={<ErrorPage error="Invalid URL" />} />
-        <Route
-          path='*'
-          element={<ErrorPage error={404} />} />
+        <Route path='/media/:id' element={selectedPhoto ? <SingleMediaDetails
+          allPhotoData={marsData[userClick] || []}
+          data={selectedPhoto}
+          handleAddToFavorites={handleAddToFavorites}
+        />
+          : <ErrorPage error="Media not found" />
+        }
+        />
+        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
+        <Route path='*' element={<ErrorPage error='404 Not Found' />} /> */}
       </Routes>
     </>
   );

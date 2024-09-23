@@ -16,7 +16,7 @@ function LandingPage({ handleClick }: LandingPageProps) {
                 <div className='title-directions'>Click around and discover NASA's images of Mars</div>
                 <div className='title-directions-2'>Scroll down to explore the Horizon</div>
             </header>
-            <InteractiveMars handleClick={handleClick}/>
+            <InteractiveMars handleClick={handleClick} />
         </div>
     )
 }
