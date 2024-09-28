@@ -37,7 +37,7 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
   if (!photo) {
     return <div>
       Media not found.
-      <Link to="/AllMarsMedia">
+      <Link to="/mars">
         Back to All Mars Media
       </Link>
     </div>;
@@ -46,7 +46,7 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
   return (
     <div className='single-media-detail-wrapper'>
       <div className='single-media-back-button-wrapper'>
-        <Link to='/allMarsMedia' className='single-media-back-button'>Back to All Mars Media</Link>
+        <Link to='/mars' className='single-media-back-button'>Back to All Mars Media</Link>
       </div>
       <div className='single-media-wrapper'>
         <div className='single-media-title-button-wrapper'>

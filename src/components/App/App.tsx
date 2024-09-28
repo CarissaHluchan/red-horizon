@@ -106,7 +106,7 @@ function App() {
             <AllMarsMedia
               allMarsData={marsData['allMars'] || []}
               handleAddToFavorites={handleAddToFavorites} />} />
-        <Route path="/AllMarsMedia"
+        <Route path="/mars"
           element={
             <div ref={mediaRef}>
               <AllMarsMedia allMarsData={marsData['allMars'] || []} handleAddToFavorites={handleAddToFavorites} />
