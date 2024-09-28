@@ -31,7 +31,7 @@ function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) 
               <img className='single-thumbnail' src={photo.img_src} alt={`${photo.title}`} />
             </Link>
             <div className='favorites-radio-button-parent'>
-              <p>Add to favorites</p>
+              <label>Add to favorites</label>
               <input
                 type="radio"
                 className='radio-button'

@@ -11,27 +11,34 @@ interface Photo {
 
 interface FavoritesProps {
   favorites: Photo[]
+  handleRemoveFromFavorites: (favoriteToRemove: Photo) => void; 
 }
 
-function Favorites({ favorites }: FavoritesProps) {
+function Favorites({ favorites, handleRemoveFromFavorites }: FavoritesProps) {
+
+  // const handleRemoveFromFavorites = (event) => {
+  //   event.preventDefault()
+
+  // }
 
   return (
     <section className='favorites-section'>
-      <div className='favorites-title'>Your Favorites</div>
-      <div className='media-gallery'>
+      <h4 className='favorites-title'>Your Favorites</h4>
+      <div className='favorites-media-gallery'>
         {favorites.map(photo => (
-          <div key={photo.id} className='media-item'>
-            <p className='media-item-title'>{photo.title}</p>
+          <div key={photo.id} className='favorites-media-item'>
+            <h5 className='favorites-media-item-title'>{photo.title}</h5>
             <Link to={`/media/${photo.id}`}>
               <img
-                className='single-thumbnail'
+                className='favorites-single-thumbnail'
                 src={photo.img_src}
                 alt={photo.title} />
             </Link>
-            <p className='media-item-date'>
-              <span className='date-taken' >{'DATE TAKEN: '}</span>
+            <div className='favorites-media-item-date'>
+              <span className='favorites-date-taken' >{'DATE TAKEN: '}</span>
               {photo.date_created}
-            </p>
+            </div>
+            <button onClick={() => handleRemoveFromFavorites(photo)} className='favorites-remove-button'>Remove</button>
           </div>
         ))}
       </div>

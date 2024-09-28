@@ -44,12 +44,7 @@ function App() {
 
   const selectedPhoto = marsData[userClick]?.find(photo => photo.id === id);
 
-  const handleAddToFavorites = (photoItem: Photo) => {
-    setFavorites(prevFavorites =>
-      [...prevFavorites, photoItem]
-    );
-  }
-
+  
   const fetchData = async (query: string, fetchFunction: () => Promise<Photo[]>) => {
     try {
       const data = await fetchFunction();
@@ -64,7 +59,7 @@ function App() {
       });
     }
   }
-
+  
   useEffect(() => {
     const fetchAllData = async () => {
       await fetchData('allMars', allMars);
@@ -81,16 +76,25 @@ function App() {
       await fetchData('candorChasma', candorChasma);
       await fetchData('aresVallis', aresVallis);
     };
-
+    
     fetchAllData();
   }, [navigate]);
-
+  
   // useEffect to scroll to the media section when userClick or id changes
   useEffect(() => {
     if (mediaRef.current) {
       mediaRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [userClick, id]); // Trigger when the route or selected media changes
+  
+  const handleAddToFavorites = (photoItem: Photo) => {
+    setFavorites(prevFavorites =>
+      [...prevFavorites, photoItem]
+    );
+  }
+  const handleRemoveFromFavorites = (favoriteToRemove: Photo) => {
+    setFavorites(prevFavorites => prevFavorites.filter(favoritePhoto => favoritePhoto.id !== favoriteToRemove.id))
+  }
 
   return (
     <>
@@ -122,9 +126,9 @@ function App() {
             <DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} />
           </div>
         } />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} handleRemoveFromFavorites={handleRemoveFromFavorites}/>} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
-        <Route path='*' element={<ErrorPage error={404} />} />
+        <Route path='*' element={<ErrorPage error="404 - Page Not Found" />} />
 
 
         {/* <Route path="/" element={<AllMarsMedia
