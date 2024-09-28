@@ -8,7 +8,7 @@ interface ErrorPageProps {
 function ErrorPage({error}: ErrorPageProps) {
 const { code } = useParams<{ code: string }>();
 
-const errorCode = error || code
+const errorCode = error !== undefined ? error : code;
 
     return (
         <section className='error-section'>
