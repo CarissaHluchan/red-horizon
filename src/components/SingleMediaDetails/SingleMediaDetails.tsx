@@ -20,6 +20,7 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
   const { id } = useParams<{ id: string }>();
 
   const photo = allPhotoData.find(photo => photo.id === id);
+  // const photo = allPhotoData.find(photo => photo.id === id || photo.id === parseInt(id, 10));
 
   const handleFavoriteClick = () => {
     if (photo) {
@@ -27,10 +28,16 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
     }
   }
 
+  // const handleFavoriteClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (photo && event.target.checked) {
+  //     handleAddToFavorites(photo);
+  //   }
+  // };
+
   if (!photo) {
     return <div>
       Media not found.
-      <Link to="/AllMarsMedia">
+      <Link to="/mars">
         Back to All Mars Media
       </Link>
     </div>;
@@ -39,60 +46,33 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
   return (
     <div className='single-media-detail-wrapper'>
       <div className='single-media-back-button-wrapper'>
-        <Link
-          to='/allMarsMedia'
-          className='single-media-back-button'>
-          Back to All Mars Media
-        </Link>
+        <Link to='/mars' className='single-media-back-button'>Back to All Mars Media</Link>
       </div>
       <div className='single-media-wrapper'>
         <div className='single-media-title-button-wrapper'>
-          <div className='single-media-title'>
-            {photo.title}
-          </div>
+          <div className='single-media-title'>{photo.title}</div>
           <div className='single-media-all-button-wrapper'>
-            <div className='radio-button-parent'>
-              <label
-                className='radio-button-label'>
-                Add to favorites
-              </label>
+            <label className='radio-button-label'>
+              Add to favorites
               <input
-                type="radio"
+                type="checkbox"
                 className='favorite-radio-button'
                 onChange={handleFavoriteClick}
               />
-            </div>
-            <Link
-              to='/favorites'
-              className='see-favorites'>
-              See Favorites
-            </Link>
+            </label>
+            <Link to='/favorites' className='see-favorites'>See Favorites</Link>
           </div>
         </div>
         <div className='single-media-main-image-wrapper'>
-          <img
-            className='single-media-main-image'
-            src={photo.img_src}
-            alt={photo.description}
-          />
+          <img className='single-media-main-image' src={photo.img_src} alt={photo.description} />
         </div>
         <div className='single-media-date-wrapper'>
-          <div
-            className='single-media-date-label'>
-            Date Created:
-          </div>
-          <div className='single-media-date'>
-            {photo.date_created}
-          </div>
+          <div className='single-media-date-label'>Date Created:</div>
+          <div className='single-media-date'>{photo.date_created}</div>
         </div>
         <div className='single-media-description-wrapper'>
-          <div
-            className='single-media-description-label'>
-            Description:
-          </div>
-          <p className='single-media-description'>
-            {photo.description}
-          </p>
+          <div className='single-media-description-label'>Description:</div>
+          <p className='single-media-description'>{photo.description}</p>
         </div>
       </div>
     </div>

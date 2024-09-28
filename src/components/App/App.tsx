@@ -44,11 +44,6 @@ function App() {
 
   const selectedPhoto = marsData[userClick]?.find(photo => photo.id === id);
 
-  const handleAddToFavorites = (photoItem: Photo) => {
-    setFavorites(prevFavorites =>
-      [...prevFavorites, photoItem]
-    );
-  }
 
   const fetchData = async (query: string, fetchFunction: () => Promise<Photo[]>) => {
     try {
@@ -92,39 +87,42 @@ function App() {
     }
   }, [userClick, id]); // Trigger when the route or selected media changes
 
+  const handleAddToFavorites = (photoItem: Photo) => {
+    setFavorites(prevFavorites =>
+      [...prevFavorites, photoItem]
+    );
+  }
+  const handleRemoveFromFavorites = (favoriteToRemove: Photo) => {
+    setFavorites(prevFavorites => prevFavorites.filter(favoritePhoto => favoritePhoto.id !== favoriteToRemove.id))
+  }
+
   return (
     <>
       <LandingPage handleClick={setUserClick} />
       <Routes>
 
-        <Route path="/"
-          element={
-            <AllMarsMedia
-              allMarsData={marsData['allMars'] || []}
-              handleAddToFavorites={handleAddToFavorites} />} />
-        <Route path="/AllMarsMedia"
-          element={
-            <div ref={mediaRef}>
-              <AllMarsMedia allMarsData={marsData['allMars'] || []} handleAddToFavorites={handleAddToFavorites} />
-            </div>} />
-        <Route path="/media/:id"
-          element={selectedPhoto ? (
-            <SingleMediaDetails
-              allPhotoData={marsData[userClick] || []}
-              data={selectedPhoto}
-              handleAddToFavorites={handleAddToFavorites}
-            />
-          ) : (
-            <ErrorPage error="Media not found" />
-          )} />
+        <Route path="/" element={
+          <AllMarsMedia
+            allMarsData={marsData['allMars'] || []}
+            handleAddToFavorites={handleAddToFavorites} />} />
+        <Route path="/mars" element={
+          <div ref={mediaRef}>
+            <AllMarsMedia allMarsData={marsData['allMars'] || []} handleAddToFavorites={handleAddToFavorites} />
+          </div>} />
+        <Route path="/media/:id" element={selectedPhoto ? (
+          <SingleMediaDetails
+            allPhotoData={marsData[userClick] || []}
+            data={selectedPhoto}
+            handleAddToFavorites={handleAddToFavorites}
+          />) : (<ErrorPage error="Media not found" />)} />
         <Route path='/mars/:media' element={
           <div ref={mediaRef}>
             <DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} />
           </div>
         } />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} handleRemoveFromFavorites={handleRemoveFromFavorites} />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
-        <Route path='*' element={<ErrorPage error={404} />} />
+        <Route path='*' element={<ErrorPage error="404 - Page Not Found" />} />
 
 
         {/* <Route path="/" element={<AllMarsMedia
