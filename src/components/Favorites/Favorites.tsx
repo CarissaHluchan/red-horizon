@@ -24,6 +24,7 @@ function Favorites({ favorites, handleRemoveFromFavorites }: FavoritesProps) {
   return (
     <section className='favorites-section'>
       <h4 className='favorites-title'>Your Favorites</h4>
+      <div className='favorites-actual-line'></div>
       <div className='favorites-media-gallery'>
         {favorites.map(photo => (
           <div key={photo.id} className='favorites-media-item'>

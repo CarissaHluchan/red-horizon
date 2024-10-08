@@ -12,15 +12,18 @@ interface Photo {
 interface SingleMediaDetailsProps {
   allPhotoData: Photo[];
   data: Photo | null;
+  userHasClicked: String | null;
   handleAddToFavorites: (photo: Photo) => void;
 }
 
-function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaDetailsProps) {
+function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites }: SingleMediaDetailsProps) {
 
   const { id } = useParams<{ id: string }>();
 
   const photo = allPhotoData.find(photo => photo.id === id);
-  // const photo = allPhotoData.find(photo => photo.id === id || photo.id === parseInt(id, 10));
+
+  console.log(id, '<-- CHECK ID IN SINGLE MEDIA')
+  console.log(allPhotoData, '<-- CHECK ALL PHOTO DATA IN SINGLE MEDIA')
 
   const handleFavoriteClick = () => {
     if (photo) {
@@ -46,7 +49,9 @@ function SingleMediaDetails({ allPhotoData, handleAddToFavorites }: SingleMediaD
   return (
     <div className='single-media-detail-wrapper'>
       <div className='single-media-back-button-wrapper'>
-        <Link to='/mars' className='single-media-back-button'>Back to All Mars Media</Link>
+        {/* <Link to='/mars/allMars' className='single-media-back-button'>Back to All Mars Media</Link> */}
+        {/* <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back to {`${userHasClicked}`} Media</Link> */}
+        <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back to Previous List</Link>
       </div>
       <div className='single-media-wrapper'>
         <div className='single-media-title-button-wrapper'>

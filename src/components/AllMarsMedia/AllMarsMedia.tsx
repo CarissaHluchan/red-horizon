@@ -12,13 +12,16 @@ interface Photo {
 interface AllMarsMediaProps {
   allMarsData: Photo[];
   handleAddToFavorites: (photo: Photo) => void;
+  handleClick: (photo: Photo) => void;
 }
 
-function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) {
+function AllMarsMedia({ allMarsData, handleAddToFavorites, handleClick }: AllMarsMediaProps) {
 
   const handleFavoriteClick = (photo: Photo) => {
     handleAddToFavorites(photo);
   };
+
+  console.log(allMarsData[551], '<-- DATA FROM ALL MARS DATA')
 
   return (
     <section className='media-section'>
@@ -27,8 +30,8 @@ function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) 
         {allMarsData.map(photo => (
           <div key={photo.id} className="media-item">
             <h3 className='photo-title'>{photo.title}</h3>
-            <Link to={`/mars/${photo.id}`}>
-              <img className='single-thumbnail' src={photo.img_src} alt={`${photo.title}`} />
+            <Link to={`/media/${photo.id}`}>
+              <img className='single-thumbnail' src={photo.img_src} alt={`${photo.title}`} onClick={() => handleClick(photo)}/>
             </Link>
             <div className='favorites-radio-button-parent'>
               <label>Add to favorites</label>
@@ -45,4 +48,4 @@ function AllMarsMedia({ allMarsData, handleAddToFavorites }: AllMarsMediaProps) 
   );
 }
 
-export default AllMarsMedia;
+// export default AllMarsMedia;

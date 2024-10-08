@@ -14,7 +14,7 @@ import {
   aresVallis
 } from '../APICalls/APICalls';
 import LandingPage from '../LandingPage/LandingPage';
-import AllMarsMedia from '../AllMarsMedia/AllMarsMedia';
+// import AllMarsMedia from '../AllMarsMedia/AllMarsMedia';
 import DynamicMedia from '../DynamicMedia/DynamicMedia'
 import Favorites from '../Favorites/Favorites';
 import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
@@ -31,19 +31,37 @@ interface Photo {
   date_created: string;
 }
 
-export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | '';
+export type MarsDataType = 'deimos' | 'phobos' | 'polarIceCaps' | 'rovers' | 'olympusMons' | 'ascraeusMons' | 'pavonisMons' | 'arsiaMons' | 'vallesMarineris' | 'argyrePlanitia' | 'candorChasma' | 'aresVallis' | 'allMars' | '';
 
 function App() {
   const [marsData, setMarsData] = useState<Record<string, Photo[]>>({});
   const [userClick, setUserClick] = useState<MarsDataType>('');
   const [favorites, setFavorites] = useState<Photo[]>([]);
-  const navigate = useNavigate();
-  const mediaRef = useRef<HTMLDivElement | null>(null);;
 
-  const { id } = useParams<{ id: string }>();
+  const [id, setId] = useState<string>('')
+
+  const navigate = useNavigate();
+  const mediaRef = useRef<HTMLDivElement | null>(null);
+
+
+  console.log(userClick, '<-- USER CLICK IN APP')
+
+
+  // const { id } = useParams<{ id: string }>();
 
   const selectedPhoto = marsData[userClick]?.find(photo => photo.id === id);
+  // const selectedPhoto = marsData[userClick]?.find(photo => photo.id === event.target.classList[1]);
 
+
+  console.log(marsData[userClick], '<-- SELECTED PHOTO IN APP')
+  console.log(id, '<-- ID IN APP')
+  // console.log(userClick, '<-- USER CLICK IN APP')
+
+
+  const handleClick = (aPhoto: Photo) => {
+    console.log(aPhoto.id, '<-- IN ID HANDLECLICK')
+    setId(aPhoto.id);
+  }
 
   const fetchData = async (query: string, fetchFunction: () => Promise<Photo[]>) => {
     try {
@@ -78,7 +96,7 @@ function App() {
     };
 
     fetchAllData();
-  }, [navigate]);
+  }, []);
 
   // useEffect to scroll to the media section when userClick or id changes
   useEffect(() => {
@@ -101,23 +119,33 @@ function App() {
       <LandingPage handleClick={setUserClick} />
       <Routes>
 
-        <Route path="/" element={
-          <AllMarsMedia
-            allMarsData={marsData['allMars'] || []}
-            handleAddToFavorites={handleAddToFavorites} />} />
-        <Route path="/mars" element={
-          <div ref={mediaRef}>
-            <AllMarsMedia allMarsData={marsData['allMars'] || []} handleAddToFavorites={handleAddToFavorites} />
-          </div>} />
-        <Route path="/media/:id" element={selectedPhoto ? (
-          <SingleMediaDetails
-            allPhotoData={marsData[userClick] || []}
-            data={selectedPhoto}
-            handleAddToFavorites={handleAddToFavorites}
-          />) : (<ErrorPage error="Media not found" />)} />
+        <Route path="/"
+          element={
+            <DynamicMedia
+              data={marsData["allMars"] || []}
+              handleAddToFavorites={handleAddToFavorites}
+              handleClick={handleClick} 
+              title={'allMars'} 
+              />} />
+        {/* <Route path="/"
+          element={
+            <div ref={mediaRef}>
+              <DynamicMedia data={marsData["allMars"] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} handleClick={handleClick} />
+            </div>} /> */}
+        <Route path="/media/:id"
+          element={selectedPhoto ? (
+            <SingleMediaDetails
+              allPhotoData={marsData[userClick] || []}
+              data={selectedPhoto} 
+              userHasClicked={ userClick }
+              handleAddToFavorites={handleAddToFavorites}
+            />
+          ) : (
+            <ErrorPage error="Media not found" />
+          )} />
         <Route path='/mars/:media' element={
           <div ref={mediaRef}>
-            <DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} />
+            <DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} handleClick={handleClick} />
           </div>
         } />
         <Route path='/favorites' element={<Favorites favorites={favorites} handleRemoveFromFavorites={handleRemoveFromFavorites} />} />
