@@ -11,10 +11,11 @@ interface Photo {
 
 interface FavoritesProps {
   favorites: Photo[]
-  handleRemoveFromFavorites: (favoriteToRemove: Photo) => void; 
+  handleRemoveFromFavorites: (favoriteToRemove: Photo) => void;
+  handleClick: (photo: Photo) => void;
 }
 
-function Favorites({ favorites, handleRemoveFromFavorites }: FavoritesProps) {
+function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: FavoritesProps) {
 
   // const handleRemoveFromFavorites = (event) => {
   //   event.preventDefault()
@@ -33,7 +34,9 @@ function Favorites({ favorites, handleRemoveFromFavorites }: FavoritesProps) {
               <img
                 className='favorites-single-thumbnail'
                 src={photo.img_src}
-                alt={photo.title} />
+                alt={photo.title} 
+                onClick={() => handleClick(photo)}
+                />
             </Link>
             <div className='favorites-media-item-date'>
               <span className='favorites-date-taken' >{'DATE TAKEN: '}</span>

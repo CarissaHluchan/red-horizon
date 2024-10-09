@@ -148,7 +148,7 @@ function App() {
             <DynamicMedia data={marsData[userClick] || []} title="Mars Media" handleAddToFavorites={handleAddToFavorites} handleClick={handleClick} />
           </div>
         } />
-        <Route path='/favorites' element={<Favorites favorites={favorites} handleRemoveFromFavorites={handleRemoveFromFavorites} />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} handleRemoveFromFavorites={handleRemoveFromFavorites} handleClick={handleClick} />} />
         <Route path='/error/:code' element={<ErrorPage error="Invalid URL" />} />
         <Route path='*' element={<ErrorPage error="404 - Page Not Found" />} />
 

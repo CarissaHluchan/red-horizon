@@ -51,7 +51,7 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
       <div className='single-media-back-button-wrapper'>
         {/* <Link to='/mars/allMars' className='single-media-back-button'>Back to All Mars Media</Link> */}
         {/* <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back to {`${userHasClicked}`} Media</Link> */}
-        <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back to Previous List</Link>
+        <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back</Link>
       </div>
       <div className='single-media-wrapper'>
         <div className='single-media-title-button-wrapper'>
@@ -60,12 +60,12 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
             <label className='radio-button-label'>
               Add to favorites
               <input
-                type="checkbox"
+                type="radio"
                 className='favorite-radio-button'
                 onChange={handleFavoriteClick}
               />
             </label>
-            <Link to='/favorites' className='see-favorites'>See Favorites</Link>
+            <Link to='/favorites' className='see-favorites-button'>See Favorites</Link>
           </div>
         </div>
         <div className='single-media-main-image-wrapper'>

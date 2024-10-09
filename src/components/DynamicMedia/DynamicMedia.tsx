@@ -19,7 +19,7 @@ interface DynamicMediaProps {
 function DynamicMedia({ data, handleAddToFavorites, handleClick }: DynamicMediaProps) {
   return (
     <section className='media-section'>
-      <Link to='/favorites' className='favorites-button'>See Favorites</Link>
+      <Link to='/favorites' className='see-favorites-button'>See Favorites</Link>
       <div className='media-gallery'>
         {data.map(photo => (
           <div key={photo.id} className='media-item' >
@@ -27,6 +27,7 @@ function DynamicMedia({ data, handleAddToFavorites, handleClick }: DynamicMediaP
             <Link to={`/media/${photo.id}`}>
               <img
                 className={`single-thumbnail ${photo.id}`}
+                // className="img-thumbnail"
                 src={photo.img_src}
                 alt={photo.title} 
                 onClick={() => handleClick(photo)}/>
