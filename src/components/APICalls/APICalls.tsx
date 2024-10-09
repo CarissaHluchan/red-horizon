@@ -53,7 +53,11 @@ interface Photo {
 
 export const fetchMarsData = async (query: string): Promise<Photo[]> => {
     try {                       
-      const response = await fetch(`https://images-api.nasa.gov/search?q=${query}&media_type=image&year_start=1920&year_end=2024&page_size=1000`);
+      const response = await fetch(`https://images-api.nasa.gov/search?q=${query}&media_type=image&year_start=1920&year_end=2024&page_size=1000`, {
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      });
       if (!response.ok) {
         throw new Error(`There was an error displaying media for ${query}.`);
       }

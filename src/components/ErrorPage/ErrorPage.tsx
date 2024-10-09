@@ -5,16 +5,18 @@ interface ErrorPageProps {
   error?: string | number;
 }
 
-function ErrorPage({error}: ErrorPageProps) {
-const { code } = useParams<{ code: string }>();
+function ErrorPage({ error }: ErrorPageProps) {
+  const { code } = useParams<{ code: string }>();
 
-const errorCode = error || code
+  const errorCode = error !== undefined ? error : code;
 
-    return (
-        <section className='error-section'>
-            <h4>{`We are so sorry, there\'s been a ${errorCode} error! Please try again later.`}</h4>
-        </section>
-    )
+  console.log(code, '<-- ERROR IN ERROR PAGE')
+
+  return (
+    <section className='error-section'>
+      <h4>{`We are so sorry, there\'s been a ${errorCode} error! Please try again later.`}</h4>
+    </section>
+  )
 }
 
 export default ErrorPage;
