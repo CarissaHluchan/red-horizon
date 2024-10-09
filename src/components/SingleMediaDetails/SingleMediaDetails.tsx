@@ -1,5 +1,6 @@
 import './SingleMediaDetails.css';
 import { useParams, Link } from 'react-router-dom';
+import moment from 'moment';
 
 interface Photo {
   id: string;
@@ -73,7 +74,7 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
         </div>
         <div className='single-media-date-wrapper'>
           <div className='single-media-date-label'>Date Created:</div>
-          <div className='single-media-date'>{photo.date_created}</div>
+          <div className='single-media-date'>{moment(photo.date_created).format('LLLL')}</div>
         </div>
         <div className='single-media-description-wrapper'>
           <div className='single-media-description-label'>Description:</div>

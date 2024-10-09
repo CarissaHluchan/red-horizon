@@ -1,5 +1,6 @@
 import './Favorites.css';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 interface Photo {
   id: string;
@@ -39,8 +40,8 @@ function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: Favori
                 />
             </Link>
             <div className='favorites-media-item-date'>
-              <span className='favorites-date-taken' >{'DATE TAKEN: '}</span>
-              {photo.date_created}
+              <span className='favorites-date-taken' >{'DATE TAKEN: '}</span><br></br>
+              {moment(photo.date_created).format('LLLL')}
             </div>
             <button onClick={() => handleRemoveFromFavorites(photo)} className='favorites-remove-button'>Remove</button>
           </div>

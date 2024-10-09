@@ -13,7 +13,6 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  /* font-family: var(--clickable-font); */
   font-size: max(16px, 4vw);
   color: var(--primary-color);
 }

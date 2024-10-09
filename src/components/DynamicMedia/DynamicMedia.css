@@ -23,8 +23,6 @@
   grid-template-rows: auto;
   justify-items: center;
   margin-top: 1rem;
-  column-gap: 2.5%;
-  row-gap: .20%;
 }
 
 .photo-title {
@@ -33,6 +31,7 @@
 }
 
 .media-item {
+  width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
