@@ -18,11 +18,6 @@ interface FavoritesProps {
 
 function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: FavoritesProps) {
 
-  // const handleRemoveFromFavorites = (event) => {
-  //   event.preventDefault()
-
-  // }
-
   return (
     <section className='favorites-section'>
       <h4 className='favorites-title'>Your Favorites</h4>

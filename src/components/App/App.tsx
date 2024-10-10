@@ -21,7 +21,7 @@ import SingleMediaDetails from '../SingleMediaDetails/SingleMediaDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
 
 import { useState, useEffect, useRef } from 'react';
-import { Routes, Route, useParams, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 interface Photo {
   id: string;
@@ -59,7 +59,9 @@ function App() {
 
 
   const handleClick = (aPhoto: Photo) => {
+
     console.log(aPhoto.id, '<-- IN ID HANDLECLICK')
+
     setId(aPhoto.id);
   }
 
@@ -97,6 +99,37 @@ function App() {
 
     fetchAllData();
   }, []);
+
+  // useEffect(() => {
+  //   const fetchAllData = async () => {
+  //     const fetchFunctions = [
+  //       ['allMars', allMars],
+  //       ['rovers', rovers],
+  //       ['phobos', phobos],
+  //       ['deimos', deimos],
+  //       ['polarIceCaps', polarIceCaps],
+  //       ['olympusMons', olympusMons],
+  //       ['ascraeusMons', ascraeusMons],
+  //       ['pavonisMons', pavonisMons],
+  //       ['arsiaMons', arsiaMons],
+  //       ['vallesMarineris', vallesMarineris],
+  //       ['argyrePlanitia', argyrePlanitia],
+  //       ['candorChasma', candorChasma],
+  //       ['aresVallis', aresVallis]
+  //     ];
+  
+  //     const results = await Promise.allSettled(fetchFunctions.map(([query, fn]) => fetchData(query as string, fn)));
+      
+  //     results.forEach((result, index) => {
+  //       if (result.status === 'rejected') {
+  //         console.error(`Error fetching ${fetchFunctions[index][0]} data:`, result.reason);
+  //       }
+  //     });
+  //   };
+  
+  //   fetchAllData();
+  // }, []);
+  
 
   // useEffect to scroll to the media section when userClick or id changes
   useEffect(() => {
