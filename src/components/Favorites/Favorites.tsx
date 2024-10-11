@@ -35,8 +35,8 @@ function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: Favori
                 />
             </Link>
             <div className='favorites-media-item-date'>
-              <span className='favorites-date-taken' >{'DATE TAKEN: '}</span><br></br>
-              {moment(photo.date_created).format('LLLL')}
+              <div className='favorites-date-taken-label'>DATE TAKEN:</div>
+              <span className='favorites-date-taken' >{moment(photo.date_created).format('dddd, MMMM D YYYY, h:mm:ss a')}</span>
             </div>
             <button onClick={() => handleRemoveFromFavorites(photo)} className='favorites-remove-button'>Remove</button>
           </div>

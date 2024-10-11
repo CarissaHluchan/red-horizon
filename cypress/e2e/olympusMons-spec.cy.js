@@ -85,7 +85,7 @@ describe('olympusMons spec.', () => {
     cy.get('.olympus-mons-wrapper').realHover()
       .get('.hover-text-olympus-mons').contains('Olympus Mons')
       .get('.olympus-mons-wrapper').realClick()
-      .get('.favorites-button').should('exist')
+      .get('.see-favorites-button').should('exist')
       .get('.media-gallery').should('exist')
       .get('.media-gallery').children().should('have.length', 6)
 
@@ -131,7 +131,7 @@ describe('olympusMons spec.', () => {
       .get('.ice-cap-wrapper').realHover()
       .get('.hover-text-ice-cap').should('be.visible')
       .get('.ice-cap-wrapper').realClick()
-      .get('.favorites-button').should('exist')
+      .get('.see-favorites-button').should('exist')
       .get('.media-gallery').should('exist')
       .get('.media-gallery').children().should('have.length', 6)
 

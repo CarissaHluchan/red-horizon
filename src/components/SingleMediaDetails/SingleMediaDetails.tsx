@@ -74,7 +74,7 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
         </div>
         <div className='single-media-date-wrapper'>
           <div className='single-media-date-label'>Date Created:</div>
-          <div className='single-media-date'>{moment(photo.date_created).format('LLLL')}</div>
+          <div className='single-media-date'>{moment(photo.date_created).format('dddd, MMMM D YYYY, h:mm:ss a')}</div>
         </div>
         <div className='single-media-description-wrapper'>
           <div className='single-media-description-label'>Description:</div>

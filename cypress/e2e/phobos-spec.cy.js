@@ -85,7 +85,7 @@ describe('phobos spec.', () => {
     cy.get('.phobos-wrapper').realHover()
       .get('.phobos-title').contains('Phobos')
       .get('.phobos-wrapper').realClick()
-      .get('.favorites-button').should('exist')
+      .get('.see-favorites-button').should('exist')
       .get('.media-gallery').should('exist')
       .get('.media-gallery').children().should('have.length', 6)
 
@@ -131,7 +131,7 @@ describe('phobos spec.', () => {
       .get('.ice-cap-wrapper').realHover()
       .get('.hover-text-ice-cap').should('be.visible')
       .get('.ice-cap-wrapper').realClick()
-      .get('.favorites-button').should('exist')
+      .get('.see-favorites-button').should('exist')
       .get('.media-gallery').should('exist')
       .get('.media-gallery').children().should('have.length', 6)
 

@@ -62,8 +62,12 @@
   margin: 1rem
 }
 
-.favorites-date-taken {
+.favorites-date-taken-label {
   color: var(--primary-color);
+}
+
+.favorites-date-taken {
+  color: white;
 }
 
 .favorites-single-thumbnail {
