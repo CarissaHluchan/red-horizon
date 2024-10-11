@@ -85,7 +85,7 @@
   margin: 1.5vw;
 }
 
-/* breakpoints */
+/*-----------------// break points //---------------*/
 
 @media screen and (max-width: 1220px) {
   .favorites-media-gallery {

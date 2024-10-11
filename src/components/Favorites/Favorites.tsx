@@ -1,6 +1,6 @@
-import './Favorites.css';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import './Favorites.css';
 
 interface Photo {
   id: string;
@@ -8,13 +8,13 @@ interface Photo {
   description: string;
   title: string;
   date_created: string;
-}
+};
 
 interface FavoritesProps {
   favorites: Photo[]
   handleRemoveFromFavorites: (favoriteToRemove: Photo) => void;
   handleClick: (photo: Photo) => void;
-}
+};
 
 function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: FavoritesProps) {
 
@@ -43,7 +43,7 @@ function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: Favori
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Favorites;
