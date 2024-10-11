@@ -1,4 +1,3 @@
-
 .favorites-section {
   display: flex;
   flex-direction: column;
@@ -13,8 +12,21 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+  /* font-size: max(16px, 4vw); */
+  color: var(--primary-color);
+  /* background-color: rgba(0, 0, 0, .75); */
+  /* background-size: 5px; */
+  /* border-radius: 10px; */
+  /* text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; */
+  /* width: 1vw; */
+  width: 90%;
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
   font-size: max(16px, 4vw);
   color: var(--primary-color);
+  border-radius: 25px;
 }
 
 .wrapper-for-bottom-line {

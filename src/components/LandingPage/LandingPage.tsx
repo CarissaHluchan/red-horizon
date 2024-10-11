@@ -11,10 +11,10 @@ function LandingPage({ handleClick }: LandingPageProps) {
     return (
         <div>
             <header className='title'>
-                <h1>Red Horizon</h1>
-                <div className='title-question'>Do you want to see more about the Red Planet?</div>
-                <div className='title-directions'>Click around and discover NASA's images of Mars</div>
-                <div className='title-directions-2'>Scroll down to explore the Horizon</div>
+                <h1 tabIndex={0} >Red Horizon</h1>
+                <div className='title-question' tabIndex={0} >Do you want to see more about the Red Planet?</div>
+                <div className='title-directions' tabIndex={0}>Click around and discover NASA's images of Mars</div>
+                <div className='title-directions-2' tabIndex={0}>Scroll down to explore the Horizon</div>
             </header>
             <InteractiveMars handleClick={handleClick} />
         </div>
