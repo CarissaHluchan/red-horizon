@@ -1,6 +1,6 @@
-import './SingleMediaDetails.css';
 import { useParams, Link } from 'react-router-dom';
 import moment from 'moment';
+import './SingleMediaDetails.css';
 
 interface Photo {
   id: string;
@@ -23,20 +23,11 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
 
   const photo = allPhotoData.find(photo => photo.id === id);
 
-  console.log(id, '<-- CHECK ID IN SINGLE MEDIA')
-  console.log(allPhotoData, '<-- CHECK ALL PHOTO DATA IN SINGLE MEDIA')
-
   const handleFavoriteClick = () => {
     if (photo) {
       handleAddToFavorites(photo);
-    }
-  }
-
-  // const handleFavoriteClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   if (photo && event.target.checked) {
-  //     handleAddToFavorites(photo);
-  //   }
-  // };
+    };
+  };
 
   if (!photo) {
     return <div>
@@ -45,13 +36,11 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
         Back to All Mars Media
       </Link>
     </div>;
-  }
+  };
 
   return (
     <div className='single-media-detail-wrapper'>
       <div className='single-media-back-button-wrapper'>
-        {/* <Link to='/mars/allMars' className='single-media-back-button'>Back to All Mars Media</Link> */}
-        {/* <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back to {`${userHasClicked}`} Media</Link> */}
         <Link to={`/mars/${userHasClicked}`} className='single-media-back-button'>Back</Link>
       </div>
       <div className='single-media-wrapper'>
@@ -74,7 +63,7 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
         </div>
         <div className='single-media-date-wrapper'>
           <div className='single-media-date-label'>Date Created:</div>
-          <div className='single-media-date'>{moment(photo.date_created).format('LLLL')}</div>
+          <div className='single-media-date'>{moment(photo.date_created).format('dddd, MMMM D YYYY, h:mm:ss a')}</div>
         </div>
         <div className='single-media-description-wrapper'>
           <div className='single-media-description-label'>Description:</div>
@@ -83,7 +72,6 @@ function SingleMediaDetails({ userHasClicked, allPhotoData, handleAddToFavorites
       </div>
     </div>
   );
-}
-
+};
 
 export default SingleMediaDetails;

@@ -1,5 +1,4 @@
-import './InteractiveMars.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import MainMarsImage from '../../assets/MARS-Viking.jpg';
 import clickablePhobosMoon from '../../assets/Phobos.jpg';
@@ -8,6 +7,7 @@ import clickableRover from '../../assets/Rover.png';
 import GuiTarget from '../../assets/GUI-Target.png';
 
 import { MarsDataType } from '../App/App';
+import './InteractiveMars.css';
 
 interface InteractiveMarsProps {
     handleClick: (target: MarsDataType) => void;
@@ -19,20 +19,11 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
         <div className='interactive-zone'>
             <div className='mars-parent-container'>
                 <img src={MainMarsImage} alt='Mars' className='main-mars-image' />
-                {/* <Link to='/' className='mars-title-wrapper' onClick={() => { handleClick('') }}>
-                    <h2 className='mars-title'> Mars</h2>
-                    <span className='hover-text-mars-title'>See all the images of Mars</span>
-                    <img src={GuiTarget} alt='GUI target on mars title' className='gui-target-mars-title' />
-                </Link> */}
-
-
                 <Link to='/mars/allMars' className='mars-title-wrapper' onClick={() => { handleClick('allMars') }}>
                     <h2 className='mars-title'> Mars</h2>
                     <span className='hover-text-mars-title'>See all the images of Mars</span>
                     <img src={GuiTarget} alt='GUI target on mars title' className='gui-target-mars-title' />
                 </Link>
-                
-
                 <Link to='/mars/rovers' className='rover-wrapper' onClick={() => { handleClick('rovers') }}>
                     <span className='hover-text-rovers'>Rovers</span>
                     <img src={clickableRover} alt='Rover' className='clickalbe-rover' />
@@ -88,7 +79,7 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
                 </Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default InteractiveMars;

@@ -24,6 +24,7 @@
 }
 
 /*------------------// Mars Title //------------------------*/
+
 .mars-title-wrapper {
     font-family: var(--clickable-font);
     position: absolute;
@@ -73,6 +74,7 @@
 }
 
 /*-----------------------// rover //------------------------*/
+
 .rover-wrapper {
     width: 15vw;
     height: 7.5vw;
@@ -120,6 +122,7 @@
 }
 
 /*-------------------// Moons //-----------------------*/
+
 .moons {
     width: 100%;
     display: flex;
@@ -130,6 +133,7 @@
 }
 
 /*-------------------// Phobos //------------------*/
+
 .phobos-wrapper {
     display: flex;
     flex-direction: column;
@@ -164,6 +168,7 @@
 }
 
 /*-------------------// Deimos //------------------*/
+
 .deimos-wrapper {
     display: flex;
     flex-direction: column;
@@ -198,6 +203,7 @@
 
 /*---------------------// targets //--------------------*/
 /*-----------------// Ice Caps //---------------*/
+
 .ice-cap-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -240,6 +246,7 @@
 
 
 /*-----------------// Olympus Mons //---------------*/
+
 .olympus-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -281,6 +288,7 @@
 }
 
 /*-----------------// ascraeus-mons //---------------*/
+
 .ascraeus-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -322,6 +330,7 @@
 }
 
 /*-----------------// pavonis-mons //---------------*/
+
 .pavonis-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -363,6 +372,7 @@
 }
 
 /*-----------------// arsia-mons //---------------*/
+
 .arsia-mons-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -404,6 +414,7 @@
 }
 
 /*-----------------// valles-marineris //---------------*/
+
 .valles-marineris-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -445,6 +456,7 @@
 }
 
 /*-----------------// argyre-planitia //---------------*/
+
 .argyre-planitia-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -487,6 +499,7 @@
 
 
 /*-----------------// candor-chasma //---------------*/
+
 .candor-chasma-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);
@@ -529,6 +542,7 @@
 
 
 /*-----------------// ares-vallis //---------------*/
+
 .ares-vallis-wrapper {
     position: absolute;
     width: calc(var(--mars-width) / 4);

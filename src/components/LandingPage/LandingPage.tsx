@@ -1,6 +1,6 @@
-import './LandingPage.css';
 import InteractiveMars from '../InteractiveMars/InteractiveMars';
 import { MarsDataType } from '../App/App';
+import './LandingPage.css';
 
 interface LandingPageProps {
     handleClick: (target: MarsDataType) => void;
@@ -18,7 +18,7 @@ function LandingPage({ handleClick }: LandingPageProps) {
             </header>
             <InteractiveMars handleClick={handleClick} />
         </div>
-    )
-}
+    );
+};
 
 export default LandingPage;

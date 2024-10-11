@@ -4,7 +4,7 @@ interface Link {
   href: string;
   rel: string;
   render: string;
-}
+};
 
 interface PhotoData {
   description: string;
@@ -16,13 +16,13 @@ interface PhotoData {
   keywords: string[];
   media_type: string;
   center: string;
-}
+};
 
 interface PhotoItem {
   href: string;
   data: PhotoData[];
   links: Link[];
-}
+};
 
 interface AllMarsResponse {
   collection: {
@@ -30,7 +30,7 @@ interface AllMarsResponse {
     href: string;
     items: PhotoItem[];
   };
-}
+};
 
 interface Photo {
   id: string;
@@ -38,16 +38,7 @@ interface Photo {
   description: string;
   title: string;
   date_created: string;
-}
-
-// interface phobosResponse {
-//   collection: {
-//     version: string;
-//     href: string;
-//     items: PhotoItem[];
-//   };
-// }
-
+};
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// Dynamic code //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,7 +51,7 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
       });
       if (!response.ok) {
         throw new Error(`There was an error displaying media for ${query}.`);
-      }
+      };
       const data: AllMarsResponse = await response.json();
   
       const photos: Photo[] = data.collection.items
@@ -77,7 +68,7 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
     } catch (error) {
       console.log(`Error fetching data for ${query}:`, error);
       throw error;
-    }
+    };
   };
   
   // Different queries

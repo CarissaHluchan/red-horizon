@@ -1,5 +1,5 @@
-import './DynamicMedia.css';
 import { Link } from 'react-router-dom';
+import './DynamicMedia.css';
 
 interface Photo {
   id: string;
@@ -7,14 +7,14 @@ interface Photo {
   description: string;
   title: string;
   date_created: string;
-}
+};
 
 interface DynamicMediaProps {
   title: string;
   data: Photo[];
   handleAddToFavorites: (photo: Photo) => void;
   handleClick: (photo: Photo) => void;
-}
+};
 
 function DynamicMedia({ data, handleAddToFavorites, handleClick }: DynamicMediaProps) {
   return (
@@ -27,7 +27,6 @@ function DynamicMedia({ data, handleAddToFavorites, handleClick }: DynamicMediaP
             <Link to={`/media/${photo.id}`}>
               <img
                 className={`single-thumbnail ${photo.id}`}
-                // className="img-thumbnail"
                 src={photo.img_src}
                 alt={photo.title} 
                 onClick={() => handleClick(photo)}/>

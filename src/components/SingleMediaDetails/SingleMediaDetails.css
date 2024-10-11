@@ -4,6 +4,7 @@
 }
 
 /*-----------------// Back Button //-----------------*/
+
 .single-media-back-button-wrapper {
   background-color: var(--black);
   height: max(42px, 10vw);
@@ -27,6 +28,7 @@
 }
 
 /*--------------------//Meida Wrapper //---------------------------*/
+
 .single-media-wrapper {
   background-color: var(--grid-bg);
   border: 1px solid var(--white);
@@ -34,6 +36,7 @@
 }
 
 /*---------------------// Title & Favorites //--------------------------*/
+
 .single-media-title-button-wrapper {
   display: flex;
   flex-direction: row;
@@ -88,6 +91,7 @@
 }
 
 /*-----------------// Main Image //-----------------*/
+
 .single-media-main-image-wrapper {
   display: flex;
   justify-content: center;
@@ -111,6 +115,7 @@
 }
 
 /*---------------------// Date //---------------------*/
+
 .single-media-date-wrapper {
   display: flex;
   flex-direction: column;
@@ -127,6 +132,7 @@
 }
 
 /*------------------// Description //------------------*/
+
 .single-media-description-wrapper {
   display: flex;
   flex-direction: column;

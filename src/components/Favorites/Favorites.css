@@ -58,21 +58,21 @@
   margin-bottom: .5rem;
 }
 
-/* .favorite-media-item-title,
-.favorite-media-item-date {
-  font-family: var(--clickable-font);
-  letter-spacing: .1vw;
-  text-wrap: pretty;
-  text-align: center;
-} */
+.favorites-media-item-date {
+  margin: 1rem
+}
 
-.favorites-date-taken {
+.favorites-date-taken-label {
   color: var(--primary-color);
 }
 
+.favorites-date-taken {
+  color: white;
+}
+
 .favorites-single-thumbnail {
-  height: 25vh;
-  width: auto;
+  height: max(100%);
+  width: min(100%);
 }
 
 .favorites-remove-button {
@@ -85,7 +85,7 @@
   margin: 1.5vw;
 }
 
-/* breakpoints */
+/*-----------------// break points //---------------*/
 
 @media screen and (max-width: 1220px) {
   .favorites-media-gallery {
