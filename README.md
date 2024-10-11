@@ -38,7 +38,7 @@ Mars exploration app for curious learners to discover images of the surface feat
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
-![Red Horizon GIF](https://github.com/user-attachments/assets/7581b964-e015-49dc-8a37-81bca8fca03c)
+![chrome-capture-2024-10-10](https://github.com/user-attachments/assets/19ebb6c0-05a1-44c0-b85f-f3326a63030c)
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
