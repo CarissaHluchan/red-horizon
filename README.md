@@ -5,6 +5,10 @@
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 Mars exploration app for curious learners to discover images of the surface features of Mars, explore its moons, and images from the Mars rover expeditions.
 
+Picture a time when you were a kid and you were at one of those interactive museums. There’s all the animal stuff witch is cool, but then you see the history section and they had the controls of a train and you could pull the whistle and that was cool too but it was just, missing something. Then you saw a massive model of the rocket. There was probably a tv nearby that had footage of Astronauts walking to the shuttle and then shaking as they blasted off into a sky that was blue to start, then faded into a deep midnight blue before fading into complete darkness which was in wild contrast to the shuttles white exterior. Then camera switches to show the earth, massive, but shrinking behind the craft. Then the propulsion cuts out and it’s silent as the astronauts begin to float and prepare for the second stage of their mission. Then you saw models of other planets and possible spacecrafts for the future, and then you heard and understood that even light has a speed and the space it has to cross is so massive that it takes 8 minutes to get to us, and suddenly; anything and everything was possible.
+	
+  While we haven’t created a museum, we aimed to capture that feeling of wonder and exploration. We know more about the surface of mars than we do the ocean floor, and NASA’s API shows that. We have access to thousands and thousands of data points from mineral content to panoramic views of martian regions we haven’t seen yet because we barely saw the highlights through whatever media we interact with. We want to remedy the mindless scrolling with scrolling that might offer something, more substantial and wonder-inspiring.
+
 ### Technology:
 [//]: <> (Add technology you used for this project.) 
 1. React
