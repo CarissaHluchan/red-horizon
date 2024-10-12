@@ -1,6 +1,4 @@
-# <picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="32" height="32"></picture><img src="https://github.com/user-attachments/assets/f7b63229-fc01-4275-a47c-e2b38dff2bbf" alt="mars" width="30" height="30">[ Red Horizon ](red-horizon-4zql.vercel.app)<picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="32" height="32"></picture><img src="https://github.com/user-attachments/assets/f7b63229-fc01-4275-a47c-e2b38dff2bbf" alt="mars" width="30" height="30">
-
-
+# <picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="32" height="32"></picture><img src="https://github.com/user-attachments/assets/f7b63229-fc01-4275-a47c-e2b38dff2bbf" alt="mars" width="30" height="30">[ Red Horizon ](https://red-horizon-4zql.vercel.app)<picture><source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" type="image/webp"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="32" height="32"></picture><img src="https://github.com/user-attachments/assets/f7b63229-fc01-4275-a47c-e2b38dff2bbf" alt="mars" width="30" height="30">
 
 
 ### Abstract:
