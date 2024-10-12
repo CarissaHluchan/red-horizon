@@ -46,7 +46,8 @@ export const fetchMarsData = async (query: string): Promise<Photo[]> => {
     try {                       
       const response = await fetch(`https://images-api.nasa.gov/search?q=${query}&media_type=image&year_start=1920&year_end=2024&page_size=1000`, {
         headers:{
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Content-Encoding': 'brotli'
         }
       });
       if (!response.ok) {

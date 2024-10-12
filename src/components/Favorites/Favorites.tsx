@@ -20,7 +20,7 @@ function Favorites({ favorites, handleRemoveFromFavorites, handleClick }: Favori
 
   return (
     <section className='favorites-section'>
-      <h4 className='favorites-title'>Your Favorites</h4>
+      <h3 className='favorites-title'>Your Favorites</h3>
       <div className='favorites-actual-line'></div>
       <div className='favorites-media-gallery'>
         {favorites.map(photo => (

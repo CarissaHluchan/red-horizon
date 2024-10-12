@@ -32,8 +32,9 @@ function DynamicMedia({ data, handleAddToFavorites, handleClick }: DynamicMediaP
                 onClick={() => handleClick(photo)}/>
             </Link>
             <div className='favorites-radio-button-parent'>
-              <label>Add to favorites</label>
+              <p id='add-to-favorites-radio-label'>Add to favorites</p>
               <input
+                aria-labelledby={'add-to-favorites-radio-label'}
                 type='radio'
                 className='radio-button'
                 onChange={() => handleAddToFavorites(photo)}
