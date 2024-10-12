@@ -12,7 +12,7 @@ function ErrorPage({ error }: ErrorPageProps) {
 
   return (
     <section className='error-section'>
-      <h4>{`We are so sorry, there\'s been a ${errorCode} error! Please try again later.`}</h4>
+      <h3>{`We are so sorry, there\'s been a ${errorCode} error! Please try again later.`}</h3>
     </section>
   );
 };

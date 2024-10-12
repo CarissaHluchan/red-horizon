@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import MainMarsImage from '../../assets/MARS-Viking.jpg';
-import clickablePhobosMoon from '../../assets/Phobos.jpg';
-import clickableDeimosMoon from '../../assets/Deimos.jpg';
+// import MainMarsImage from '../../assets/MARS-Viking.jpg';
+import MainMarsImage from '../../assets/MARS-Viking.webp';
+// import clickablePhobosMoon from '../../assets/Phobos.jpg';
+import clickablePhobosMoon from '../../assets/Phobos.webp';
+// import clickableDeimosMoon from '../../assets/Deimos.jpg';
+import clickableDeimosMoon from '../../assets/Deimos.webp';
 import clickableRover from '../../assets/Rover.png';
 import GuiTarget from '../../assets/GUI-Target.png';
 
@@ -68,12 +71,12 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
       <div className='moons'>
         <Link to='/mars/phobos' className='phobos-wrapper' onClick={() => { handleClick('phobos') }}>
           <div className='phobos-title'>Phobos</div>
-          <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon' />
+          <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon-1' />
           <img src={GuiTarget} alt='GUI target on Phobos' className='gui-target-phobos' />
         </Link>
         <Link to='mars/deimos' className='deimos-wrapper' onClick={() => { handleClick('deimos') }}>
           <div className='deimos-title'>Deimos</div>
-          <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon' />
+          <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon-2' />
           <img src={GuiTarget} alt='GUI target on Deimos' className='gui-target-deimos' />
         </Link>
       </div>
