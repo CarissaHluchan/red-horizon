@@ -28,7 +28,7 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
         </Link>
         <Link to='/mars/rovers' className='rover-wrapper' onClick={() => { handleClick('rovers') }}>
           <span className='hover-text-rovers'>Rovers</span>
-          <img src={clickableRover} alt='Mars-Rovers' className='clickalbe-rover' />
+          <img src={clickableRover} alt='Mars Rovers' className='clickalbe-rover' />
           <img src={GuiTarget} alt='GUI target on rover' className='gui-target-rover' />
         </Link>
         <Link to='/mars/polarIceCaps' className='ice-cap-wrapper' onClick={() => { handleClick('polarIceCaps') }}>
@@ -71,12 +71,12 @@ function InteractiveMars({ handleClick }: InteractiveMarsProps) {
       <div className='moons'>
         <Link to='/mars/phobos' className='phobos-wrapper' onClick={() => { handleClick('phobos') }}>
           <div className='phobos-title'>Phobos</div>
-          <img src={clickablePhobosMoon} alt='Phobos' className='clickable-phobos-moon-1' />
+          <img src={clickablePhobosMoon} alt='Phobos moon map' className='clickable-phobos-moon' />
           <img src={GuiTarget} alt='GUI target on Phobos' className='gui-target-phobos' />
         </Link>
         <Link to='mars/deimos' className='deimos-wrapper' onClick={() => { handleClick('deimos') }}>
           <div className='deimos-title'>Deimos</div>
-          <img src={clickableDeimosMoon} alt='Deimos' className='clickable-deimos-moon-2' />
+          <img src={clickableDeimosMoon} alt='Deimos moon map' className='clickable-deimos-moon' />
           <img src={GuiTarget} alt='GUI target on Deimos' className='gui-target-deimos' />
         </Link>
       </div>
