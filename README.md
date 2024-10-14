@@ -69,5 +69,6 @@ This application was built by:
 - This was our first time working with a large-scale API, through the use of PostMan we were able to test various endpoints to get back the data we needed to display images for each of our interactive targets.
 - We taught ourselves TypeScript reading through and implementing documentation.
 - Learned advanced CSS techniques including hover, transform, and displaying <span> text
+- Added accessibility using Wave Chrome extension and Lighthouse to test this.
 - Did research and implemented an extension to thoroughly test hover interaction in Cypress
 
