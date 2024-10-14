@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 
-// import MainMarsImage from '../../assets/MARS-Viking.jpg';
 import MainMarsImage from '../../assets/MARS-Viking.webp';
-// import clickablePhobosMoon from '../../assets/Phobos.jpg';
 import clickablePhobosMoon from '../../assets/Phobos.webp';
-// import clickableDeimosMoon from '../../assets/Deimos.jpg';
 import clickableDeimosMoon from '../../assets/Deimos.webp';
 import clickableRover from '../../assets/Rover.png';
 import GuiTarget from '../../assets/GUI-Target.png';
